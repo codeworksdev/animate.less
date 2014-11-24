@@ -88,12 +88,9 @@ View the animation library in action over at http://animateforless.com/. You can
 ## License
 Animate.less is licensed under the MIT license. (http://opensource.org/licenses/MIT)
 
-## Contributing
-Pull requests are the way to go here. I only have two rules for submitting a pull request: match the naming convention (camelCase, categorised [fades, bounces, etc]) and let us see a demo of submitted animations in a [pen](http://codepen.io).
-
 ##Cheat Sheet
 
-####Attention seekers:
+####Attention Seekers
 flash
 bounce
 shake
@@ -103,14 +100,14 @@ wobble
 wiggle
 pulse
 
-####Flippers (currently Webkit, Firefox, &amp; IE10 only):
+####Flippers
 flip
 flipInX
 flipOutX
 flipInY
 flipOutY
 
-####Fading entrances:
+####Fading Entrances
 fadeIn
 fadeInUp
 fadeInDown
@@ -121,7 +118,7 @@ fadeInDownBig
 fadeInLeftBig
 fadeInRightBig
 
-####Fading exits:
+####Fading Exits
 fadeOut
 fadeOutUp
 fadeOutDown
@@ -132,40 +129,51 @@ fadeOutDownBig
 fadeOutLeftBig
 fadeOutRightBig
 
-####Bouncing entrances:
+####Bouncing Entrances
 bounceIn
 bounceInDown
 bounceInUp
 bounceInLeft
 bounceInRight
 
-####Bouncing exits:
+####Bouncing Exits
 bounceOut
 bounceOutDown
 bounceOutUp
 bounceOutLeft
 bounceOutRight
 
-####Rotating entrances:
+####Rotating Entrances
 rotateIn
 rotateInDownLeft
 rotateInDownRight
 rotateInUpLeft
 rotateInUpRight
 
-####Rotating exits:
+####Rotating Exits
 rotateOut
 rotateOutDownLeft
 rotateOutDownRight
 rotateOutUpLeft
 rotateOutUpRight
 
-####Lightspeed:
+####Lightspeed
 lightSpeedIn
 lightSpeedOut
 
-####Specials:
+####Specials
 hinge
 rollIn
 rollOut
 
+###Sliding Entrances
+slideInDown
+slideInLeft
+slideInRight
+slideInUp
+
+###Sliding Exits
+slideOutDown
+slideOutLeft
+slideOutRight
+slideOutUp
