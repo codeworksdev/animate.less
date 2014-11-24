@@ -77,7 +77,7 @@ Which will output:
 }
 ```
 
-And there you have it! The animation has been achieved without using any jQuery. Of course, this is only tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
+And there you have it! The animation has been achieved without using any jQuery. Of course, this is only a tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
 
 ##Documentation
 Coming soon. I promise!
