@@ -1,7 +1,6 @@
-animate.less
+Animate.less
 ============
 
-##Animate.less
 *CSS animation pack for Less.*
 
 `animate.less` is a collection of cross-browser CSS animations that you can plug right into your Less pre-processor for use in your projects. Thanks to the power of [Less](http://lesscss.org/), you can now create seriously complex animations, even without using any JavaScript or jQuery magic.
