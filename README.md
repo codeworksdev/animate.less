@@ -50,8 +50,11 @@ One of the advantages of using Less is that you can create functions, which are 
 
 ```less
 #yourElement {
-  .animated();
-  .bounceOutLeft();
+  #animator.animated();         // initialize animation
+  #animator.bounceOutLeft();    // initialize the animation effect
+  #animator.iterate(infinite);  // repeat the animation forever
+  #animator.delay(2s);          // delay everything for 2 seconds
+  #animator.duration(3s);       // each iteration will play for 3 seconds
 }
 ```
 
@@ -59,11 +62,11 @@ Which will output:
 
 ```css
 #yourElement {
-  -webkit-animation-duration: 1s;
-     -moz-animation-duration: 1s;
-      -ms-animation-duration: 1s;
-       -o-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+      -ms-animation-duration: 3s;
+       -o-animation-duration: 3s;
+          animation-duration: 3s;
   -webkit-animation-fill-mode: both;
      -moz-animation-fill-mode: both;
       -ms-animation-fill-mode: both;
@@ -74,19 +77,29 @@ Which will output:
       -ms-animation-name: bounceOutLeft;
        -o-animation-name: bounceOutLeft;
           animation-name: bounceOutLeft;
+  -webkit-animation-iteration-count: infinite;
+     -moz-animation-iteration-count: infinite;
+      -ms-animation-iteration-count: infinite;
+       -o-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transition-delay: 2s;
+     -moz-transition-delay: 2s;
+      -ms-transition-delay: 2s;
+       -o-transition-delay: 2s;
+          transition-delay: 2s;
 }
 ```
 
-And there you have it! The animation has been achieved without using any jQuery. Of course, this is only a tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
-
-##Documentation
-Coming soon. I promise!
+And there you have it! Phew! What a ride. The animation has been achieved without using any jQuery. Of course, this is only a tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
 
 ##Live Demo
 View the animation library in action over at http://animateforless.com/. You can find Dan Eden's original demo at http://daneden.me/animate/.
 
 ## License
 Animate.less is licensed under the MIT license. (http://opensource.org/licenses/MIT)
+
+##Documentation
+Coming soon. I promise! Below is a cheat sheet to keep you busy.
 
 ##Cheat Sheet
 
