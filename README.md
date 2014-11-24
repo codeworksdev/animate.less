@@ -82,8 +82,90 @@ And there you have it! The animation has been achieved without using any jQuery.
 ##Documentation
 Coming soon. I promise!
 
+##Live Demo
+View the animation library in action over at http://animateforless.com/. You can find Dan Eden's original demo at http://daneden.me/animate/.
+
 ## License
 Animate.less is licensed under the MIT license. (http://opensource.org/licenses/MIT)
 
 ## Contributing
 Pull requests are the way to go here. I only have two rules for submitting a pull request: match the naming convention (camelCase, categorised [fades, bounces, etc]) and let us see a demo of submitted animations in a [pen](http://codepen.io).
+
+##Cheat Sheet
+
+####Attention seekers:
+flash
+bounce
+shake
+tada
+swing
+wobble
+wiggle
+pulse
+
+####Flippers (currently Webkit, Firefox, &amp; IE10 only):
+flip
+flipInX
+flipOutX
+flipInY
+flipOutY
+
+####Fading entrances:
+fadeIn
+fadeInUp
+fadeInDown
+fadeInLeft
+fadeInRight
+fadeInUpBig
+fadeInDownBig
+fadeInLeftBig
+fadeInRightBig
+
+####Fading exits:
+fadeOut
+fadeOutUp
+fadeOutDown
+fadeOutLeft
+fadeOutRight
+fadeOutUpBig
+fadeOutDownBig
+fadeOutLeftBig
+fadeOutRightBig
+
+####Bouncing entrances:
+bounceIn
+bounceInDown
+bounceInUp
+bounceInLeft
+bounceInRight
+
+####Bouncing exits:
+bounceOut
+bounceOutDown
+bounceOutUp
+bounceOutLeft
+bounceOutRight
+
+####Rotating entrances:
+rotateIn
+rotateInDownLeft
+rotateInDownRight
+rotateInUpLeft
+rotateInUpRight
+
+####Rotating exits:
+rotateOut
+rotateOutDownLeft
+rotateOutDownRight
+rotateOutUpLeft
+rotateOutUpRight
+
+####Lightspeed:
+lightSpeedIn
+lightSpeedOut
+
+####Specials:
+hinge
+rollIn
+rollOut
+
