@@ -3,7 +3,7 @@ Animate.less
 
 *CSS animation pack for Less.*
 
-`animate.less` is a collection of cross-browser CSS animations that you can plug right into your Less pre-processor for use in your projects. Thanks to the power of [Less](http://lesscss.org/), you can now create seriously complex animations, even without using any JavaScript or jQuery magic.
+`animate.less` is a collection of cross-browser CSS animations that you can plug right into your Less pre-processor for use in your projects. Thanks to the power of [Less](http://lesscss.org/), you can now create seriously complex animations, even without using any JavaScript or jQuery magic. More on this later.
 
 ##What is Less?
 Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
@@ -27,12 +27,6 @@ $('#yourElement').addClass('animated bounceOutLeft');
 
 You can also detect when an animation ends:
 
-<!--
-Before you make changes to this file, you should know that $('#yourElement').one() is *NOT A TYPO*
-
-http://api.jquery.com/one/
--->
-
 ```javascript
 $('#yourElement').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', doSomething);
 ```
@@ -50,6 +44,43 @@ You can change the duration of your animations, add a delay or change the number
 ```
 
 *Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)*
+
+##Script-less Animations
+One of the advantages of using Less is that you can create functions, which are basically [Mixins](http://lesscss.org/features/#features-overview-feature-mixins) containing nested rules and other function calls. Animate.less contains a set of mixins that make manipulating your animations easier. For example, the above jQuery example can be written as:
+
+```less
+#yourElement {
+  .animated();
+  .bounceOutLeft();
+}
+```
+
+Which will output:
+
+```css
+#yourElement {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: bounceOutLeft;
+     -moz-animation-name: bounceOutLeft;
+      -ms-animation-name: bounceOutLeft;
+       -o-animation-name: bounceOutLeft;
+          animation-name: bounceOutLeft;
+}
+```
+
+And there you have it! The animation has been achieved without using any jQuery. Of course, this is only tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
+
+##Documentation
+Coming soon. I promise!
 
 ## License
 Animate.less is licensed under the MIT license. (http://opensource.org/licenses/MIT)
