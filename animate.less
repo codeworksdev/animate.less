@@ -1,5 +1,5 @@
 /*
- * animate.less v1.0.0 | animateforless.com
+ * animate.less v1.0.1 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
@@ -37,7 +37,7 @@
 // FUNCTIONS
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-#animator {
+#afl {
 
     // ----------------------------------------
     // INITIALIZERS
@@ -227,153 +227,153 @@
 // ATTENTION SEEKERS
 // ----------------------------------------
 
-.bounce()     { #animator.animation(bounce); #animator.transform-origin(center bottom); }
-.flash()      { #animator.animation(flash);                                         }
-.pulse()      { #animator.animation(pulse);                                         }
-.rubberBand() { #animator.animation(rubberBand);                                    }
-.shake()      { #animator.animation(shake);                                         }
-.swing()      { #animator.animation(swing); #animator.transform-origin(top center);     }
-.tada()       { #animator.animation(tada);                                          }
-.wobble()     { #animator.animation(wobble);                                        }
+.bounce()     { #afl.animation(bounce); #afl.transform-origin(center bottom); }
+.flash()      { #afl.animation(flash);                                         }
+.pulse()      { #afl.animation(pulse);                                         }
+.rubberBand() { #afl.animation(rubberBand);                                    }
+.shake()      { #afl.animation(shake);                                         }
+.swing()      { #afl.animation(swing); #afl.transform-origin(top center);     }
+.tada()       { #afl.animation(tada);                                          }
+.wobble()     { #afl.animation(wobble);                                        }
 
 // ----------------------------------------
 // BOUNCING ENTRANCES
 // ----------------------------------------
 
-.bounceIn()      { #animator.animation(bounceIn); #animator.duration(a;0.75s); }
-.bounceInDown()  { #animator.animation(bounceInDown);                 }
-.bounceInLeft()  { #animator.animation(bounceInLeft);                 }
-.bounceInRight() { #animator.animation(bounceInRight);                }
-.bounceInUp()    { #animator.animation(bounceInUp);                   }
+.bounceIn()      { #afl.animation(bounceIn); #afl.duration(a;0.75s); }
+.bounceInDown()  { #afl.animation(bounceInDown);                 }
+.bounceInLeft()  { #afl.animation(bounceInLeft);                 }
+.bounceInRight() { #afl.animation(bounceInRight);                }
+.bounceInUp()    { #afl.animation(bounceInUp);                   }
 
 // ----------------------------------------
 // BOUNCING EXITS
 // ----------------------------------------
 
-.bounceOut()      { #animator.animation(bounceOut); #animator.duration(a;0.75s); }
-.bounceOutDown()  { #animator.animation(bounceOutDown);                 }
-.bounceOutLeft()  { #animator.animation(bounceOutLeft);                 }
-.bounceOutRight() { #animator.animation(bounceOutRight);                }
-.bounceOutUp()    { #animator.animation(bounceOutUp);                   }
+.bounceOut()      { #afl.animation(bounceOut); #afl.duration(a;0.75s); }
+.bounceOutDown()  { #afl.animation(bounceOutDown);                 }
+.bounceOutLeft()  { #afl.animation(bounceOutLeft);                 }
+.bounceOutRight() { #afl.animation(bounceOutRight);                }
+.bounceOutUp()    { #afl.animation(bounceOutUp);                   }
 
 // ----------------------------------------
 // FADING ENTRANCES
 // ----------------------------------------
 
-.fadeIn()         { #animator.animation(fadeIn);         }
-.fadeInDown()     { #animator.animation(fadeInDown);     }
-.fadeInDownBig()  { #animator.animation(fadeInDownBig);  }
-.fadeInLeft()     { #animator.animation(fadeInLeft);     }
-.fadeInLeftBig()  { #animator.animation(fadeInLeftBig);  }
-.fadeInRight()    { #animator.animation(fadeInRight);    }
-.fadeInRightBig() { #animator.animation(fadeInRightBig); }
-.fadeInUp()       { #animator.animation(fadeInUp);       }
-.fadeInUpBig()    { #animator.animation(fadeInUpBig);    }
+.fadeIn()         { #afl.animation(fadeIn);         }
+.fadeInDown()     { #afl.animation(fadeInDown);     }
+.fadeInDownBig()  { #afl.animation(fadeInDownBig);  }
+.fadeInLeft()     { #afl.animation(fadeInLeft);     }
+.fadeInLeftBig()  { #afl.animation(fadeInLeftBig);  }
+.fadeInRight()    { #afl.animation(fadeInRight);    }
+.fadeInRightBig() { #afl.animation(fadeInRightBig); }
+.fadeInUp()       { #afl.animation(fadeInUp);       }
+.fadeInUpBig()    { #afl.animation(fadeInUpBig);    }
 
 // ----------------------------------------
 // FADING EXITS
 // ----------------------------------------
 
-.fadeOut()         { #animator.animation(fadeOut);         }
-.fadeOutDown()     { #animator.animation(fadeOutDown);     }
-.fadeOutDownBig()  { #animator.animation(fadeOutDownBig);  }
-.fadeOutLeft()     { #animator.animation(fadeOutLeft);     }
-.fadeOutLeftBig()  { #animator.animation(fadeOutLeftBig);  }
-.fadeOutRight()    { #animator.animation(fadeOutRight);    }
-.fadeOutRightBig() { #animator.animation(fadeOutRightBig); }
-.fadeOutUp()       { #animator.animation(fadeOutUp);       }
-.fadeOutUpBig()    { #animator.animation(fadeOutUpBig);    }
+.fadeOut()         { #afl.animation(fadeOut);         }
+.fadeOutDown()     { #afl.animation(fadeOutDown);     }
+.fadeOutDownBig()  { #afl.animation(fadeOutDownBig);  }
+.fadeOutLeft()     { #afl.animation(fadeOutLeft);     }
+.fadeOutLeftBig()  { #afl.animation(fadeOutLeftBig);  }
+.fadeOutRight()    { #afl.animation(fadeOutRight);    }
+.fadeOutRightBig() { #afl.animation(fadeOutRightBig); }
+.fadeOutUp()       { #afl.animation(fadeOutUp);       }
+.fadeOutUpBig()    { #afl.animation(fadeOutUpBig);    }
 
 // ----------------------------------------
 // FLIPPERS
 // ----------------------------------------
 
-.flip()     { #animator.animation(flip); #animator.backface-visibility(visible);                                         }
-.flipInX()  { #animator.animation(flipInX); #animator.backface-visibility(visible) !important;                           }
-.flipInY()  { #animator.animation(flipInY); #animator.backface-visibility(visible) !important;                           }
-.flipOutX() { #animator.animation(flipOutX); #animator.backface-visibility(visible) !important; #animator.duration(a;0.75s); }
-.flipOutY() { #animator.animation(flipOutY); #animator.backface-visibility(visible) !important; #animator.duration(a;0.75s); }
+.flip()     { #afl.animation(flip); #afl.backface-visibility(visible);                                         }
+.flipInX()  { #afl.animation(flipInX); #afl.backface-visibility(visible) !important;                           }
+.flipInY()  { #afl.animation(flipInY); #afl.backface-visibility(visible) !important;                           }
+.flipOutX() { #afl.animation(flipOutX); #afl.backface-visibility(visible) !important; #afl.duration(a;0.75s); }
+.flipOutY() { #afl.animation(flipOutY); #afl.backface-visibility(visible) !important; #afl.duration(a;0.75s); }
 
 // ----------------------------------------
 // LIGHTSPEED
 // ----------------------------------------
 
-.lightSpeedIn()  { #animator.animation(lightSpeedIn); #animator.timing(ease-out); }
-.lightSpeedOut() { #animator.animation(lightSpeedOut); #animator.timing(ease-in); }
+.lightSpeedIn()  { #afl.animation(lightSpeedIn); #afl.timing(ease-out); }
+.lightSpeedOut() { #afl.animation(lightSpeedOut); #afl.timing(ease-in); }
 
 // ----------------------------------------
 // ROTATING ENTRANCES
 // ----------------------------------------
 
-.rotateIn()          { #animator.animation(rotateIn);          }
-.rotateInDownLeft()  { #animator.animation(rotateInDownLeft);  }
-.rotateInDownRight() { #animator.animation(rotateInDownRight); }
-.rotateInUpLeft()    { #animator.animation(rotateInUpLeft);    }
-.rotateInUpRight()   { #animator.animation(rotateInUpRight);   }
+.rotateIn()          { #afl.animation(rotateIn);          }
+.rotateInDownLeft()  { #afl.animation(rotateInDownLeft);  }
+.rotateInDownRight() { #afl.animation(rotateInDownRight); }
+.rotateInUpLeft()    { #afl.animation(rotateInUpLeft);    }
+.rotateInUpRight()   { #afl.animation(rotateInUpRight);   }
 
 // ----------------------------------------
 // ROTATING EXITS
 // ----------------------------------------
 
-.rotateOut()          { #animator.animation(rotateOut);          }
-.rotateOutDownLeft()  { #animator.animation(rotateOutDownLeft);  }
-.rotateOutDownRight() { #animator.animation(rotateOutDownRight); }
-.rotateOutUpLeft()    { #animator.animation(rotateOutUpLeft);    }
-.rotateOutUpRight()   { #animator.animation(rotateOutUpRight);   }
+.rotateOut()          { #afl.animation(rotateOut);          }
+.rotateOutDownLeft()  { #afl.animation(rotateOutDownLeft);  }
+.rotateOutDownRight() { #afl.animation(rotateOutDownRight); }
+.rotateOutUpLeft()    { #afl.animation(rotateOutUpLeft);    }
+.rotateOutUpRight()   { #afl.animation(rotateOutUpRight);   }
 
 // ----------------------------------------
 // SPECIALS
 // ----------------------------------------
 
-.hinge()   { #animator.animation(hinge); #animator.duration(2s); }
-.rollIn()  { #animator.animation(rollIn);                        }
-.rollOut() { #animator.animation(rollOut);                       }
+.hinge()   { #afl.animation(hinge); #afl.duration(2s); }
+.rollIn()  { #afl.animation(rollIn);                        }
+.rollOut() { #afl.animation(rollOut);                       }
 
 // ----------------------------------------
 // ZOOM ENTRANCES
 // ----------------------------------------
 
-.zoomIn()      { #animator.animation(zoomIn);      }
-.zoomInDown()  { #animator.animation(zoomInDown);  }
-.zoomInLeft()  { #animator.animation(zoomInLeft);  }
-.zoomInRight() { #animator.animation(zoomInRight); }
-.zoomInUp()    { #animator.animation(zoomInUp);    }
+.zoomIn()      { #afl.animation(zoomIn);      }
+.zoomInDown()  { #afl.animation(zoomInDown);  }
+.zoomInLeft()  { #afl.animation(zoomInLeft);  }
+.zoomInRight() { #afl.animation(zoomInRight); }
+.zoomInUp()    { #afl.animation(zoomInUp);    }
 
 // ----------------------------------------
 // ZOOM EXITS
 // ----------------------------------------
 
-.zoomOut()      { #animator.animation(zoomOut);      }
-.zoomOutDown()  { #animator.animation(zoomOutDown);  }
-.zoomOutLeft()  { #animator.animation(zoomOutLeft);  }
-.zoomOutRight() { #animator.animation(zoomOutRight); }
-.zoomOutUp()    { #animator.animation(zoomOutUp);    }
+.zoomOut()      { #afl.animation(zoomOut);      }
+.zoomOutDown()  { #afl.animation(zoomOutDown);  }
+.zoomOutLeft()  { #afl.animation(zoomOutLeft);  }
+.zoomOutRight() { #afl.animation(zoomOutRight); }
+.zoomOutUp()    { #afl.animation(zoomOutUp);    }
 
 // ----------------------------------------
 // SLIDING ENTRANCES
 // ----------------------------------------
 
-.slideInDown()  { #animator.animation(slideInDown);  }
-.slideInLeft()  { #animator.animation(slideInLeft);  }
-.slideInRight() { #animator.animation(slideInRight); }
-.slideInUp()    { #animator.animation(slideInUp);    }
+.slideInDown()  { #afl.animation(slideInDown);  }
+.slideInLeft()  { #afl.animation(slideInLeft);  }
+.slideInRight() { #afl.animation(slideInRight); }
+.slideInUp()    { #afl.animation(slideInUp);    }
 
 // ----------------------------------------
 // SLIDING EXITS
 // ----------------------------------------
 
-.slideOutDown()  { #animator.animation(slideOutDown);  }
-.slideOutLeft()  { #animator.animation(slideOutLeft);  }
-.slideOutRight() { #animator.animation(slideOutRight); }
-.slideOutUp()    { #animator.animation(slideOutUp);    }
+.slideOutDown()  { #afl.animation(slideOutDown);  }
+.slideOutLeft()  { #afl.animation(slideOutLeft);  }
+.slideOutRight() { #afl.animation(slideOutRight); }
+.slideOutUp()    { #afl.animation(slideOutUp);    }
 
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // ANIMATION CLASSES (USES ANIMATION FUNCTIONS LISTED ABOVE)
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-.animated           { #animator.animated;          }
-.animated.infinite  { #animator.iterate(infinite); }
+.animated           { #afl.animated;          }
+.animated.infinite  { #afl.iterate(infinite); }
 .bounce             { .bounce;                     }
 .flash              { .flash;                      }
 .pulse              { .pulse;                      }
