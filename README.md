@@ -51,10 +51,10 @@ One of the advantages of using Less is that you can create functions, which are 
 ```less
 #yourElement {
   #a.animated();         // initialize animation
-  #a.bounceOutLeft();    // initialize the animation effect
   #a.iterate(infinite);  // repeat the animation forever
   #a.delay(2s);          // delay everything for 2 seconds
   #a.duration(3s);       // each iteration will play for 3 seconds
+    .bounceOutLeft();    // initialize the animation effect (notice the lack of the #a prefix)
 }
 ```
 
