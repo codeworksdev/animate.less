@@ -1,5 +1,5 @@
 /*
- * animate.less v1.0.1 | animateforless.com
+ * animate.less v1.0.2 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
@@ -37,7 +37,7 @@
 // FUNCTIONS
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-#afl {
+#a {
 
     // ----------------------------------------
     // INITIALIZERS
@@ -194,19 +194,19 @@
 // ANIMATION FUNCTIONS (VENDOR-SPECIFIC FLAVORS)
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-#animation-timing-function(@function: ease-in)                  {@{vendor}animation-timing-function: @function;}
-#duration(@what; @time: 250ms) when (@what = a)                 {@{vendor}animation-duration: @time;}
-#duration(@what; @time: 250ms) when (@what = t)                 {@{vendor}transition-duration: @time;}
-#delay(@what; @time: 500ms) when (@what = a)                    {@{vendor}animation-delay: @time;}
-#delay(@what; @time: 500ms) when (@what = t)                    {@{vendor}transition-delay: @time;}
-#timing(@what; @function: ease) when (@what = a)                {@{vendor}animation-timing-function: @function;}
-#timing(@what; @function: ease) when (@what = t)                {@{vendor}transition-timing-function: @function;}
-#iterate(@iterations: 1)                                        {@{vendor}animation-iteration-count: @iterations;}
-#transform(@value: none)                                        {@{vendor}transform: @value;}
-#transform-origin(@position: top left)                          {@{vendor}transform-origin: @position;}
-#transition(@what: all; @time: 250ms; @transition: ease-in-out) {@{vendor}transition: @what @time @transition;}
-#backface-visibility(@value: hidden)                            {@{vendor}backface-visibility: @value;}
-#vendor(@property; @value)                                      {@{vendor}@{property}: @value;}
+#animation-timing-function (@function: ease-in)                                 {@{vendor}animation-timing-function: @function;}
+#duration                  (@what; @time: 250ms) when (@what = a)               {@{vendor}animation-duration: @time;}
+#duration                  (@what; @time: 250ms) when (@what = t)               {@{vendor}transition-duration: @time;}
+#delay                     (@what; @time: 500ms) when (@what = a)               {@{vendor}animation-delay: @time;}
+#delay                     (@what; @time: 500ms) when (@what = t)               {@{vendor}transition-delay: @time;}
+#timing                    (@what; @function: ease) when (@what = a)            {@{vendor}animation-timing-function: @function;}
+#timing                    (@what; @function: ease) when (@what = t)            {@{vendor}transition-timing-function: @function;}
+#iterate                   (@iterations: 1)                                     {@{vendor}animation-iteration-count: @iterations;}
+#transform                 (@value: none)                                       {@{vendor}transform: @value;}
+#transform-origin          (@position: top left)                                {@{vendor}transform-origin: @position;}
+#transition                (@what: all; @time: 250ms; @transition: ease-in-out) {@{vendor}transition: @what @time @transition;}
+#backface-visibility       (@value: hidden)                                     {@{vendor}backface-visibility: @value;}
+#vendor                    (@property; @value)                                  {@{vendor}@{property}: @value;}
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // KEYFRAME GENERATOR
@@ -227,227 +227,227 @@
 // ATTENTION SEEKERS
 // ----------------------------------------
 
-.bounce()     { #afl.animation(bounce); #afl.transform-origin(center bottom); }
-.flash()      { #afl.animation(flash);                                         }
-.pulse()      { #afl.animation(pulse);                                         }
-.rubberBand() { #afl.animation(rubberBand);                                    }
-.shake()      { #afl.animation(shake);                                         }
-.swing()      { #afl.animation(swing); #afl.transform-origin(top center);     }
-.tada()       { #afl.animation(tada);                                          }
-.wobble()     { #afl.animation(wobble);                                        }
+.bounce()     { #a.animation(bounce); #a.transform-origin(center bottom); }
+.flash()      { #a.animation(flash);                                      }
+.pulse()      { #a.animation(pulse);                                      }
+.rubberBand() { #a.animation(rubberBand);                                 }
+.shake()      { #a.animation(shake);                                      }
+.swing()      { #a.animation(swing); #a.transform-origin(top center);     }
+.tada()       { #a.animation(tada);                                       }
+.wobble()     { #a.animation(wobble);                                     }
 
 // ----------------------------------------
 // BOUNCING ENTRANCES
 // ----------------------------------------
 
-.bounceIn()      { #afl.animation(bounceIn); #afl.duration(a;0.75s); }
-.bounceInDown()  { #afl.animation(bounceInDown);                 }
-.bounceInLeft()  { #afl.animation(bounceInLeft);                 }
-.bounceInRight() { #afl.animation(bounceInRight);                }
-.bounceInUp()    { #afl.animation(bounceInUp);                   }
+.bounceIn()      { #a.animation(bounceIn); #a.duration(a;0.75s); }
+.bounceInDown()  { #a.animation(bounceInDown);                   }
+.bounceInLeft()  { #a.animation(bounceInLeft);                   }
+.bounceInRight() { #a.animation(bounceInRight);                  }
+.bounceInUp()    { #a.animation(bounceInUp);                     }
 
 // ----------------------------------------
 // BOUNCING EXITS
 // ----------------------------------------
 
-.bounceOut()      { #afl.animation(bounceOut); #afl.duration(a;0.75s); }
-.bounceOutDown()  { #afl.animation(bounceOutDown);                 }
-.bounceOutLeft()  { #afl.animation(bounceOutLeft);                 }
-.bounceOutRight() { #afl.animation(bounceOutRight);                }
-.bounceOutUp()    { #afl.animation(bounceOutUp);                   }
+.bounceOut()      { #a.animation(bounceOut); #a.duration(a;0.75s); }
+.bounceOutDown()  { #a.animation(bounceOutDown);                   }
+.bounceOutLeft()  { #a.animation(bounceOutLeft);                   }
+.bounceOutRight() { #a.animation(bounceOutRight);                  }
+.bounceOutUp()    { #a.animation(bounceOutUp);                     }
 
 // ----------------------------------------
 // FADING ENTRANCES
 // ----------------------------------------
 
-.fadeIn()         { #afl.animation(fadeIn);         }
-.fadeInDown()     { #afl.animation(fadeInDown);     }
-.fadeInDownBig()  { #afl.animation(fadeInDownBig);  }
-.fadeInLeft()     { #afl.animation(fadeInLeft);     }
-.fadeInLeftBig()  { #afl.animation(fadeInLeftBig);  }
-.fadeInRight()    { #afl.animation(fadeInRight);    }
-.fadeInRightBig() { #afl.animation(fadeInRightBig); }
-.fadeInUp()       { #afl.animation(fadeInUp);       }
-.fadeInUpBig()    { #afl.animation(fadeInUpBig);    }
+.fadeIn()         { #a.animation(fadeIn);         }
+.fadeInDown()     { #a.animation(fadeInDown);     }
+.fadeInDownBig()  { #a.animation(fadeInDownBig);  }
+.fadeInLeft()     { #a.animation(fadeInLeft);     }
+.fadeInLeftBig()  { #a.animation(fadeInLeftBig);  }
+.fadeInRight()    { #a.animation(fadeInRight);    }
+.fadeInRightBig() { #a.animation(fadeInRightBig); }
+.fadeInUp()       { #a.animation(fadeInUp);       }
+.fadeInUpBig()    { #a.animation(fadeInUpBig);    }
 
 // ----------------------------------------
 // FADING EXITS
 // ----------------------------------------
 
-.fadeOut()         { #afl.animation(fadeOut);         }
-.fadeOutDown()     { #afl.animation(fadeOutDown);     }
-.fadeOutDownBig()  { #afl.animation(fadeOutDownBig);  }
-.fadeOutLeft()     { #afl.animation(fadeOutLeft);     }
-.fadeOutLeftBig()  { #afl.animation(fadeOutLeftBig);  }
-.fadeOutRight()    { #afl.animation(fadeOutRight);    }
-.fadeOutRightBig() { #afl.animation(fadeOutRightBig); }
-.fadeOutUp()       { #afl.animation(fadeOutUp);       }
-.fadeOutUpBig()    { #afl.animation(fadeOutUpBig);    }
+.fadeOut()         { #a.animation(fadeOut);         }
+.fadeOutDown()     { #a.animation(fadeOutDown);     }
+.fadeOutDownBig()  { #a.animation(fadeOutDownBig);  }
+.fadeOutLeft()     { #a.animation(fadeOutLeft);     }
+.fadeOutLeftBig()  { #a.animation(fadeOutLeftBig);  }
+.fadeOutRight()    { #a.animation(fadeOutRight);    }
+.fadeOutRightBig() { #a.animation(fadeOutRightBig); }
+.fadeOutUp()       { #a.animation(fadeOutUp);       }
+.fadeOutUpBig()    { #a.animation(fadeOutUpBig);    }
 
 // ----------------------------------------
 // FLIPPERS
 // ----------------------------------------
 
-.flip()     { #afl.animation(flip); #afl.backface-visibility(visible);                                         }
-.flipInX()  { #afl.animation(flipInX); #afl.backface-visibility(visible) !important;                           }
-.flipInY()  { #afl.animation(flipInY); #afl.backface-visibility(visible) !important;                           }
-.flipOutX() { #afl.animation(flipOutX); #afl.backface-visibility(visible) !important; #afl.duration(a;0.75s); }
-.flipOutY() { #afl.animation(flipOutY); #afl.backface-visibility(visible) !important; #afl.duration(a;0.75s); }
+.flip()     { #a.animation(flip);     #a.backface-visibility(visible);                                  }
+.flipInX()  { #a.animation(flipInX);  #a.backface-visibility(visible) !important;                       }
+.flipInY()  { #a.animation(flipInY);  #a.backface-visibility(visible) !important;                       }
+.flipOutX() { #a.animation(flipOutX); #a.backface-visibility(visible) !important; #a.duration(a;0.75s); }
+.flipOutY() { #a.animation(flipOutY); #a.backface-visibility(visible) !important; #a.duration(a;0.75s); }
 
 // ----------------------------------------
 // LIGHTSPEED
 // ----------------------------------------
 
-.lightSpeedIn()  { #afl.animation(lightSpeedIn); #afl.timing(ease-out); }
-.lightSpeedOut() { #afl.animation(lightSpeedOut); #afl.timing(ease-in); }
+.lightSpeedIn()  { #a.animation(lightSpeedIn); #a.timing(ease-out); }
+.lightSpeedOut() { #a.animation(lightSpeedOut); #a.timing(ease-in); }
 
 // ----------------------------------------
 // ROTATING ENTRANCES
 // ----------------------------------------
 
-.rotateIn()          { #afl.animation(rotateIn);          }
-.rotateInDownLeft()  { #afl.animation(rotateInDownLeft);  }
-.rotateInDownRight() { #afl.animation(rotateInDownRight); }
-.rotateInUpLeft()    { #afl.animation(rotateInUpLeft);    }
-.rotateInUpRight()   { #afl.animation(rotateInUpRight);   }
+.rotateIn()          { #a.animation(rotateIn);          }
+.rotateInDownLeft()  { #a.animation(rotateInDownLeft);  }
+.rotateInDownRight() { #a.animation(rotateInDownRight); }
+.rotateInUpLeft()    { #a.animation(rotateInUpLeft);    }
+.rotateInUpRight()   { #a.animation(rotateInUpRight);   }
 
 // ----------------------------------------
 // ROTATING EXITS
 // ----------------------------------------
 
-.rotateOut()          { #afl.animation(rotateOut);          }
-.rotateOutDownLeft()  { #afl.animation(rotateOutDownLeft);  }
-.rotateOutDownRight() { #afl.animation(rotateOutDownRight); }
-.rotateOutUpLeft()    { #afl.animation(rotateOutUpLeft);    }
-.rotateOutUpRight()   { #afl.animation(rotateOutUpRight);   }
+.rotateOut()          { #a.animation(rotateOut);          }
+.rotateOutDownLeft()  { #a.animation(rotateOutDownLeft);  }
+.rotateOutDownRight() { #a.animation(rotateOutDownRight); }
+.rotateOutUpLeft()    { #a.animation(rotateOutUpLeft);    }
+.rotateOutUpRight()   { #a.animation(rotateOutUpRight);   }
 
 // ----------------------------------------
 // SPECIALS
 // ----------------------------------------
 
-.hinge()   { #afl.animation(hinge); #afl.duration(2s); }
-.rollIn()  { #afl.animation(rollIn);                        }
-.rollOut() { #afl.animation(rollOut);                       }
+.hinge()   { #a.animation(hinge); #a.duration(2s); }
+.rollIn()  { #a.animation(rollIn);                 }
+.rollOut() { #a.animation(rollOut);                }
 
 // ----------------------------------------
 // ZOOM ENTRANCES
 // ----------------------------------------
 
-.zoomIn()      { #afl.animation(zoomIn);      }
-.zoomInDown()  { #afl.animation(zoomInDown);  }
-.zoomInLeft()  { #afl.animation(zoomInLeft);  }
-.zoomInRight() { #afl.animation(zoomInRight); }
-.zoomInUp()    { #afl.animation(zoomInUp);    }
+.zoomIn()      { #a.animation(zoomIn);      }
+.zoomInDown()  { #a.animation(zoomInDown);  }
+.zoomInLeft()  { #a.animation(zoomInLeft);  }
+.zoomInRight() { #a.animation(zoomInRight); }
+.zoomInUp()    { #a.animation(zoomInUp);    }
 
 // ----------------------------------------
 // ZOOM EXITS
 // ----------------------------------------
 
-.zoomOut()      { #afl.animation(zoomOut);      }
-.zoomOutDown()  { #afl.animation(zoomOutDown);  }
-.zoomOutLeft()  { #afl.animation(zoomOutLeft);  }
-.zoomOutRight() { #afl.animation(zoomOutRight); }
-.zoomOutUp()    { #afl.animation(zoomOutUp);    }
+.zoomOut()      { #a.animation(zoomOut);      }
+.zoomOutDown()  { #a.animation(zoomOutDown);  }
+.zoomOutLeft()  { #a.animation(zoomOutLeft);  }
+.zoomOutRight() { #a.animation(zoomOutRight); }
+.zoomOutUp()    { #a.animation(zoomOutUp);    }
 
 // ----------------------------------------
 // SLIDING ENTRANCES
 // ----------------------------------------
 
-.slideInDown()  { #afl.animation(slideInDown);  }
-.slideInLeft()  { #afl.animation(slideInLeft);  }
-.slideInRight() { #afl.animation(slideInRight); }
-.slideInUp()    { #afl.animation(slideInUp);    }
+.slideInDown()  { #a.animation(slideInDown);  }
+.slideInLeft()  { #a.animation(slideInLeft);  }
+.slideInRight() { #a.animation(slideInRight); }
+.slideInUp()    { #a.animation(slideInUp);    }
 
 // ----------------------------------------
 // SLIDING EXITS
 // ----------------------------------------
 
-.slideOutDown()  { #afl.animation(slideOutDown);  }
-.slideOutLeft()  { #afl.animation(slideOutLeft);  }
-.slideOutRight() { #afl.animation(slideOutRight); }
-.slideOutUp()    { #afl.animation(slideOutUp);    }
+.slideOutDown()  { #a.animation(slideOutDown);  }
+.slideOutLeft()  { #a.animation(slideOutLeft);  }
+.slideOutRight() { #a.animation(slideOutRight); }
+.slideOutUp()    { #a.animation(slideOutUp);    }
 
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // ANIMATION CLASSES (USES ANIMATION FUNCTIONS LISTED ABOVE)
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
-.animated           { #afl.animated;          }
-.animated.infinite  { #afl.iterate(infinite); }
-.bounce             { .bounce;                     }
-.flash              { .flash;                      }
-.pulse              { .pulse;                      }
-.rubberBand         { .rubberBand;                 }
-.shake              { .shake;                      }
-.swing              { .swing;                      }
-.tada               { .tada;                       }
-.wobble             { .wobble;                     }
-.bounceIn           { .bounceIn;                   }
-.bounceInDown       { .bounceInDown;               }
-.bounceInLeft       { .bounceInLeft;               }
-.bounceInRight      { .bounceInRight;              }
-.bounceInUp         { .bounceInUp;                 }
-.bounceOut          { .bounceOut;                  }
-.bounceOutDown      { .bounceOutDown;              }
-.bounceOutLeft      { .bounceOutLeft;              }
-.bounceOutRight     { .bounceOutRight;             }
-.bounceOutUp        { .bounceOutUp;                }
-.fadeIn             { .fadeIn;                     }
-.fadeInDown         { .fadeInDown;                 }
-.fadeInDownBig      { .fadeInDownBig;              }
-.fadeInLeft         { .fadeInLeft;                 }
-.fadeInLeftBig      { .fadeInLeftBig;              }
-.fadeInRight        { .fadeInRight;                }
-.fadeInRightBig     { .fadeInRightBig;             }
-.fadeInUp           { .fadeInUp;                   }
-.fadeInUpBig        { .fadeInUpBig;                }
-.fadeOut            { .fadeOut;                    }
-.fadeOutDown        { .fadeOutDown;                }
-.fadeOutDownBig     { .fadeOutDownBig;             }
-.fadeOutLeft        { .fadeOutLeft;                }
-.fadeOutLeftBig     { .fadeOutLeftBig;             }
-.fadeOutRight       { .fadeOutRight;               }
-.fadeOutRightBig    { .fadeOutRightBig;            }
-.fadeOutUp          { .fadeOutUp;                  }
-.fadeOutUpBig       { .fadeOutUpBig;               }
-.flip               { .flip;                       }
-.flipInX            { .flipInX;                    }
-.flipInY            { .flipInY;                    }
-.flipOutX           { .flipOutX;                   }
-.flipOutY           { .flipOutY;                   }
-.lightSpeedIn       { .lightSpeedIn;               }
-.lightSpeedOut      { .lightSpeedOut;              }
-.rotateIn           { .rotateIn;                   }
-.rotateInDownLeft   { .rotateInDownLeft;           }
-.rotateInDownRight  { .rotateInDownRight;          }
-.rotateInUpLeft     { .rotateInUpLeft;             }
-.rotateInUpRight    { .rotateInUpRight;            }
-.rotateOut          { .rotateOut;                  }
-.rotateOutDownLeft  { .rotateOutDownLeft;          }
-.rotateOutDownRight { .rotateOutDownRight;         }
-.rotateOutUpLeft    { .rotateOutUpLeft;            }
-.rotateOutUpRight   { .rotateOutUpRight;           }
-.hinge              { .hinge;                      }
-.rollIn             { .rollIn;                     }
-.rollOut            { .rollOut;                    }
-.zoomIn             { .zoomIn;                     }
-.zoomInDown         { .zoomInDown;                 }
-.zoomInLeft         { .zoomInLeft;                 }
-.zoomInRight        { .zoomInRight;                }
-.zoomInUp           { .zoomInUp;                   }
-.zoomOut            { .zoomOut;                    }
-.zoomOutDown        { .zoomOutDown;                }
-.zoomOutLeft        { .zoomOutLeft;                }
-.zoomOutRight       { .zoomOutRight;               }
-.zoomOutUp          { .zoomOutUp;                  }
-.slideInDown        { .slideInDown;                }
-.slideInLeft        { .slideInLeft;                }
-.slideInRight       { .slideInRight;               }
-.slideInUp          { .slideInUp;                  }
-.slideOutDown       { .slideOutDown;               }
-.slideOutLeft       { .slideOutLeft;               }
-.slideOutRight      { .slideOutRight;              }
-.slideOutUp         { .slideOutUp;                 }
+.animated           { #a.animated;          }
+.animated.infinite  { #a.iterate(infinite); }
+.bounce             { .bounce;              }
+.flash              { .flash;               }
+.pulse              { .pulse;               }
+.rubberBand         { .rubberBand;          }
+.shake              { .shake;               }
+.swing              { .swing;               }
+.tada               { .tada;                }
+.wobble             { .wobble;              }
+.bounceIn           { .bounceIn;            }
+.bounceInDown       { .bounceInDown;        }
+.bounceInLeft       { .bounceInLeft;        }
+.bounceInRight      { .bounceInRight;       }
+.bounceInUp         { .bounceInUp;          }
+.bounceOut          { .bounceOut;           }
+.bounceOutDown      { .bounceOutDown;       }
+.bounceOutLeft      { .bounceOutLeft;       }
+.bounceOutRight     { .bounceOutRight;      }
+.bounceOutUp        { .bounceOutUp;         }
+.fadeIn             { .fadeIn;              }
+.fadeInDown         { .fadeInDown;          }
+.fadeInDownBig      { .fadeInDownBig;       }
+.fadeInLeft         { .fadeInLeft;          }
+.fadeInLeftBig      { .fadeInLeftBig;       }
+.fadeInRight        { .fadeInRight;         }
+.fadeInRightBig     { .fadeInRightBig;      }
+.fadeInUp           { .fadeInUp;            }
+.fadeInUpBig        { .fadeInUpBig;         }
+.fadeOut            { .fadeOut;             }
+.fadeOutDown        { .fadeOutDown;         }
+.fadeOutDownBig     { .fadeOutDownBig;      }
+.fadeOutLeft        { .fadeOutLeft;         }
+.fadeOutLeftBig     { .fadeOutLeftBig;      }
+.fadeOutRight       { .fadeOutRight;        }
+.fadeOutRightBig    { .fadeOutRightBig;     }
+.fadeOutUp          { .fadeOutUp;           }
+.fadeOutUpBig       { .fadeOutUpBig;        }
+.flip               { .flip;                }
+.flipInX            { .flipInX;             }
+.flipInY            { .flipInY;             }
+.flipOutX           { .flipOutX;            }
+.flipOutY           { .flipOutY;            }
+.lightSpeedIn       { .lightSpeedIn;        }
+.lightSpeedOut      { .lightSpeedOut;       }
+.rotateIn           { .rotateIn;            }
+.rotateInDownLeft   { .rotateInDownLeft;    }
+.rotateInDownRight  { .rotateInDownRight;   }
+.rotateInUpLeft     { .rotateInUpLeft;      }
+.rotateInUpRight    { .rotateInUpRight;     }
+.rotateOut          { .rotateOut;           }
+.rotateOutDownLeft  { .rotateOutDownLeft;   }
+.rotateOutDownRight { .rotateOutDownRight;  }
+.rotateOutUpLeft    { .rotateOutUpLeft;     }
+.rotateOutUpRight   { .rotateOutUpRight;    }
+.hinge              { .hinge;               }
+.rollIn             { .rollIn;              }
+.rollOut            { .rollOut;             }
+.zoomIn             { .zoomIn;              }
+.zoomInDown         { .zoomInDown;          }
+.zoomInLeft         { .zoomInLeft;          }
+.zoomInRight        { .zoomInRight;         }
+.zoomInUp           { .zoomInUp;            }
+.zoomOut            { .zoomOut;             }
+.zoomOutDown        { .zoomOutDown;         }
+.zoomOutLeft        { .zoomOutLeft;         }
+.zoomOutRight       { .zoomOutRight;        }
+.zoomOutUp          { .zoomOutUp;           }
+.slideInDown        { .slideInDown;         }
+.slideInLeft        { .slideInLeft;         }
+.slideInRight       { .slideInRight;        }
+.slideInUp          { .slideInUp;           }
+.slideOutDown       { .slideOutDown;        }
+.slideOutLeft       { .slideOutLeft;        }
+.slideOutRight      { .slideOutRight;       }
+.slideOutUp         { .slideOutUp;          }
 
 
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
