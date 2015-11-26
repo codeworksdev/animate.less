@@ -1,5 +1,5 @@
 /*
- * animate.less v1.0.2 | animateforless.com
+ * animate.less v1.0.3 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
@@ -42,21 +42,21 @@
     // ----------------------------------------
     // INITIALIZERS
     // ----------------------------------------
-    
+
     .animated() {
         -webkit-animation-duration: 1s;
            -moz-animation-duration: 1s;
             -ms-animation-duration: 1s;
              -o-animation-duration: 1s;
                 animation-duration: 1s;
-        
+
         -webkit-animation-fill-mode: both;
            -moz-animation-fill-mode: both;
             -ms-animation-fill-mode: both;
              -o-animation-fill-mode: both;
                 animation-fill-mode: both;
         }
-    
+
     .animation(@name) {
         -webkit-animation-name: @name;
            -moz-animation-name: @name;
@@ -64,11 +64,11 @@
              -o-animation-name: @name;
                 animation-name: @name;
         }
-    
+
     // ----------------------------------------
     // DURATION
     // ----------------------------------------
-    
+
     .duration(@what; @time: 250ms) when (@what = a) {
         -webkit-animation-duration: @time;
            -moz-animation-duration: @time;
@@ -76,7 +76,7 @@
              -o-animation-duration: @time;
                 animation-duration: @time;
         }
-    
+
     .duration(@what; @time: 250ms) when (@what = t) {
         -webkit-transition-duration: @time;
            -moz-transition-duration: @time;
@@ -84,11 +84,11 @@
              -o-transition-duration: @time;
                 transition-duration: @time;
         }
-    
+
     // ----------------------------------------
     // DELAY
     // ----------------------------------------
-    
+
     .delay(@what; @time: 500ms) when (@what = a) {
         -webkit-animation-delay: @time;
            -moz-animation-delay: @time;
@@ -96,7 +96,7 @@
              -o-animation-delay: @time;
                 animation-delay: @time;
         }
-    
+
     .delay(@what; @time: 500ms) when (@what = t) {
         -webkit-transition-delay: @time;
            -moz-transition-delay: @time;
@@ -104,11 +104,11 @@
              -o-transition-delay: @time;
                 transition-delay: @time;
         }
-    
+
     // ----------------------------------------
     // TIMING & ITERATIONS
     // ----------------------------------------
-    
+
     .timing(@what; @function: ease) when (@what = a) {
         -webkit-animation-timing-function: @function;
            -moz-animation-timing-function: @function;
@@ -116,7 +116,7 @@
              -o-animation-timing-function: @function;
                 animation-timing-function: @function;
         }
-    
+
     .timing(@what; @function: ease) when (@what = t) {
         -webkit-transition-timing-function: @function;
            -moz-transition-timing-function: @function;
@@ -124,7 +124,7 @@
              -o-transition-timing-function: @function;
                 transition-timing-function: @function;
         }
-    
+
     .iterate(@iterations: 1) {
         -webkit-animation-iteration-count: @iterations;
            -moz-animation-iteration-count: @iterations;
@@ -132,11 +132,11 @@
              -o-animation-iteration-count: @iterations;
                 animation-iteration-count: @iterations;
         }
-    
+
     // ----------------------------------------
     // TRANSFORM & TRANSFORM ORIGIN
     // ----------------------------------------
-    
+
     .transform(@value: none) {
         -webkit-transform: @value;
            -moz-transform: @value;
@@ -144,7 +144,7 @@
              -o-transform: @value;
                 transform: @value;
         }
-    
+
     .transform-origin(@position: top left) {
         -webkit-transform-origin: @position;
            -moz-transform-origin: @position;
@@ -152,11 +152,11 @@
              -o-transform-origin: @position;
                 transform-origin: @position;
         }
-    
+
     // ----------------------------------------
     // TRANSITION
     // ----------------------------------------
-    
+
     .transition(@what: all; @time: 250ms; @transition: ease-in-out) {
         -webkit-transition: @what @time @transition;
            -moz-transition: @what @time @transition;
@@ -164,11 +164,11 @@
              -o-transition: @what @time @transition;
                 transition: @what @time @transition;
         }
-    
+
     // ----------------------------------------
     // BACKFACE VISIBILITY
     // ----------------------------------------
-    
+
     .backface-visibility(@value: hidden) {
         -webkit-backface-visibility: @value;
            -moz-backface-visibility: @value;
@@ -176,11 +176,11 @@
              -o-backface-visibility: @value;
                 backface-visibility: @value;
         }
-    
+
     // ----------------------------------------
     // EVERYTHING ELSE
     // ----------------------------------------
-    
+
     .vendor(@property; @value) {
         -webkit-@{property}: @value;
            -moz-@{property}: @value;
@@ -215,7 +215,7 @@
 #doKeyFrames(@name; @frames) {
     @-webkit-keyframes @name { @vendor: -webkit-; @frames(); }
        @-moz-keyframes @name { @vendor: -moz-;    @frames(); }
-         @-o-keyframes @name { @vendor: -o-;      @frames(); } 
+         @-o-keyframes @name { @vendor: -o-;      @frames(); }
             @keyframes @name { @vendor: ~'';      @frames(); }
     }
 
@@ -229,6 +229,7 @@
 
 .bounce()     { #a.animation(bounce); #a.transform-origin(center bottom); }
 .flash()      { #a.animation(flash);                                      }
+.flashmin()   { #a.animation(flashmin);                                   }
 .pulse()      { #a.animation(pulse);                                      }
 .rubberBand() { #a.animation(rubberBand);                                 }
 .shake()      { #a.animation(shake);                                      }
@@ -367,7 +368,6 @@
 .slideOutRight() { #a.animation(slideOutRight); }
 .slideOutUp()    { #a.animation(slideOutUp);    }
 
-
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 // ANIMATION CLASSES (USES ANIMATION FUNCTIONS LISTED ABOVE)
 // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -376,6 +376,7 @@
 .animated.infinite  { #a.iterate(infinite); }
 .bounce             { .bounce;              }
 .flash              { .flash;               }
+.flashmin           { .flashmin;            }
 .pulse              { .pulse;               }
 .rubberBand         { .rubberBand;          }
 .shake              { .shake;               }
@@ -473,6 +474,18 @@
     {
     0%, 50%, 100% {opacity: 1;}
     25%, 75%      {opacity: 0;}
+    }
+    );
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// ANIMATION - flashmin
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#doKeyFrames(
+    flashmin;
+    {
+    0%, 50%, 100% {opacity: 1.00;}
+    25%, 75%      {opacity: 0.33;}
     }
     );
 

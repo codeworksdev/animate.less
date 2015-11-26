@@ -1,5 +1,5 @@
 /*
- * animate.less v1.0.2 | animateforless.com
+ * animate.less v1.0.3 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
@@ -24,7 +24,6 @@
  * IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-
 /*
 ********************************************************************************
 **                                                                            **
@@ -69,6 +68,13 @@
   -ms-animation-name: flash;
   -o-animation-name: flash;
   animation-name: flash;
+}
+.flashmin {
+  -webkit-animation-name: flashmin;
+  -moz-animation-name: flashmin;
+  -ms-animation-name: flashmin;
+  -o-animation-name: flashmin;
+  animation-name: flashmin;
 }
 .pulse {
   -webkit-animation-name: pulse;
@@ -754,6 +760,50 @@
   25%,
   75% {
     opacity: 0;
+  }
+}
+@-webkit-keyframes flashmin {
+  0%,
+  50%,
+  100% {
+    opacity: 1.00;
+  }
+  25%,
+  75% {
+    opacity: 0.33;
+  }
+}
+@-moz-keyframes flashmin {
+  0%,
+  50%,
+  100% {
+    opacity: 1.00;
+  }
+  25%,
+  75% {
+    opacity: 0.33;
+  }
+}
+@-o-keyframes flashmin {
+  0%,
+  50%,
+  100% {
+    opacity: 1.00;
+  }
+  25%,
+  75% {
+    opacity: 0.33;
+  }
+}
+@keyframes flashmin {
+  0%,
+  50%,
+  100% {
+    opacity: 1.00;
+  }
+  25%,
+  75% {
+    opacity: 0.33;
   }
 }
 @-webkit-keyframes pulse {
