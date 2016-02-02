@@ -1,11 +1,11 @@
 /*
- * animate.less v1.0.3 | animateforless.com
+ * animate.less v1.0.4 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
  * The MIT License (MIT)
  *
- * Copyright (c) 2014 Carlos M. Bonilla
+ * Copyright (c) 2014-2016 Carlos M. Bonilla
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -306,6 +306,8 @@
 // ROTATING ENTRANCES
 // ----------------------------------------
 
+.rotate()            { #a.animation(rotate);            }
+.rotateCC()          { #a.animation(rotateCC);          }
 .rotateIn()          { #a.animation(rotateIn);          }
 .rotateInDownLeft()  { #a.animation(rotateInDownLeft);  }
 .rotateInDownRight() { #a.animation(rotateInDownRight); }
@@ -418,6 +420,8 @@
 .flipOutY           { .flipOutY;            }
 .lightSpeedIn       { .lightSpeedIn;        }
 .lightSpeedOut      { .lightSpeedOut;       }
+.rotate             { .rotate;              }
+.rotateCC           { .rotateCC;            }
 .rotateIn           { .rotateIn;            }
 .rotateInDownLeft   { .rotateInDownLeft;    }
 .rotateInDownRight  { .rotateInDownRight;   }
@@ -1045,6 +1049,30 @@
     {
     0%   {opacity: 1;}
     100% {opacity: 0; #transform(translate3d(100%, 0, 0) skewX(30deg));}
+    }
+    );
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// ANIMATION - rotate
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#doKeyFrames(
+    rotate;
+    {
+    0%   {#transform-origin(center center); #transform(rotate3d(0, 0, 1, -360deg));}
+    100% {#transform-origin(center center); #transform(rotate3d(0, 0, 1, 0deg));}
+    }
+    );
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// ANIMATION - rotateCC
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#doKeyFrames(
+    rotateCC;
+    {
+    0%   {#transform-origin(center center); #transform(rotate3d(0, 0, 1, 360deg));}
+    100% {#transform-origin(center center); #transform(rotate3d(0, 0, 1, 0deg));}
     }
     );
 

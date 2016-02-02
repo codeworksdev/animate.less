@@ -1,11 +1,11 @@
 /*
- * animate.less v1.0.3 | animateforless.com
+ * animate.less v1.0.4 | animateforless.com
  *
  * -----------------------------------------------------------------------------
  *
  * The MIT License (MIT)
  *
- * Copyright (c) 2014 Carlos M. Bonilla
+ * Copyright (c) 2014-2016 Carlos M. Bonilla
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of
  * this software and associated documentation files (the "Software"), to deal in
@@ -412,6 +412,20 @@
   -ms-animation-name: lightSpeedOut;
   -o-animation-name: lightSpeedOut;
   animation-name: lightSpeedOut;
+}
+.rotate {
+  -webkit-animation-name: rotate;
+  -moz-animation-name: rotate;
+  -ms-animation-name: rotate;
+  -o-animation-name: rotate;
+  animation-name: rotate;
+}
+.rotateCC {
+  -webkit-animation-name: rotateCC;
+  -moz-animation-name: rotateCC;
+  -ms-animation-name: rotateCC;
+  -o-animation-name: rotateCC;
+  animation-name: rotateCC;
 }
 .rotateIn {
   -webkit-animation-name: rotateIn;
@@ -3236,6 +3250,86 @@
   100% {
     opacity: 0;
     transform: translate3d(100%, 0, 0) skewX(30deg);
+  }
+}
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@-moz-keyframes rotate {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@-o-keyframes rotate {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes rotate {
+  0% {
+    transform-origin: center center;
+    transform: rotate3d(0, 0, 1, -360deg);
+  }
+  100% {
+    transform-origin: center center;
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@-webkit-keyframes rotateCC {
+  0% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    -webkit-transform-origin: center center;
+    -webkit-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@-moz-keyframes rotateCC {
+  0% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    -moz-transform-origin: center center;
+    -moz-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@-o-keyframes rotateCC {
+  0% {
+    -o-transform-origin: center center;
+    -o-transform: rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    -o-transform-origin: center center;
+    -o-transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes rotateCC {
+  0% {
+    transform-origin: center center;
+    transform: rotate3d(0, 0, 1, 360deg);
+  }
+  100% {
+    transform-origin: center center;
+    transform: rotate3d(0, 0, 1, 0deg);
   }
 }
 @-webkit-keyframes rotateIn {

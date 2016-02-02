@@ -1,3 +1,8 @@
+####v1.0.4 (2016-02-02)
+
+- Added "rotate" animation. Check docs on how to create smooth rotating animatios.
+- Formatting improvements to all source files.
+
 ####v1.0.3 (2015-11-26)
 
 - Added "flashmin" animation.
