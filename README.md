@@ -52,8 +52,8 @@ One of the advantages of using Less is that you can create functions, which are 
 #yourElement {
   #a.animated;           // initialize animation
   #a.iterate(infinite);  // repeat the animation forever
-  #a.delay(2s);          // delay everything for 2 seconds
-  #a.duration(3s);       // each iteration will play for 3 seconds
+  #a.delay(a,2s);        // delay everything for 2 seconds
+  #a.duration(a,3s);     // each iteration will play for 3 seconds
     .bounceOutLeft;      // initialize the animation effect (notice the lack of #a prefix)
 }
 ```
@@ -82,11 +82,11 @@ Which will output:
       -ms-animation-iteration-count: infinite;
        -o-animation-iteration-count: infinite;
           animation-iteration-count: infinite;
-  -webkit-transition-delay: 2s;
-     -moz-transition-delay: 2s;
-      -ms-transition-delay: 2s;
-       -o-transition-delay: 2s;
-          transition-delay: 2s;
+  -webkit-animation-delay: 2s;
+     -moz-animation-delay: 2s;
+      -ms-animation-delay: 2s;
+       -o-animation-delay: 2s;
+          animation-delay: 2s;
 }
 ```
 
@@ -112,6 +112,8 @@ swing
 wobble
 wiggle
 pulse
+rotate
+rotateCC
 
 ####Flippers
 flip
