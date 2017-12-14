@@ -5,12 +5,12 @@ Animate.less
 
 Originally created by [Dan Eden](https://github.com/daneden/animate.css), `animate.less` is a collection of cross-browser CSS animations that you can plug right into your Less pre-processor for use in your projects. Thanks to the power of [Less](http://lesscss.org/), you can now create seriously complex animations, even without using any JavaScript or jQuery magic. More on this later.
 
-##What is Less?
+## What is Less?
 Less is a CSS pre-processor, meaning that it extends the CSS language, adding features that allow variables, mixins, functions and many other techniques that allow you to make CSS that is more maintainable, themable and extendable.
 
 Less runs inside Node, in the browser and inside Rhino. There are also many [3rd party tools](http://lesscss.org/usage/index.html#guis-for-less) available that allow you to compile your files and watch for changes. The latter is the way to go if you want to get up and running quickly.
 
-##Usage
+## Usage
 To use animate.less in your website, simply drop this single file into your Less pre-processor and press `compile`. The pre-processor will generate an `animate.css` stylesheet. Just drop the stylesheet into your document's `<head>`, and add the class `animated` to an element, along with any of the included animation names. That's it! You now have an CSS animated element.
 
 ```html
@@ -45,7 +45,7 @@ You can change the duration of your animations, add a delay or change the number
 
 *Note: be sure to replace "vendor" in the CSS with the applicable vendor prefixes (webkit, moz, etc)*
 
-##Script-less Animations
+## Script-less Animations
 One of the advantages of using Less is that you can create functions, which are basically [Mixins](http://lesscss.org/features/#features-overview-feature-mixins) containing nested rules and other function calls. Animate.less contains a set of mixins that make manipulating your animations easier. For example, the above jQuery example can be written as:
 
 ```less
@@ -92,18 +92,18 @@ Which will output:
 
 And there you have it! Phew! What a ride. The animation has been achieved without using any jQuery. Of course, this is only a tiny fraction of what can be achieved with Animate.less. Please head on over to [AnimateForLess.com](http://animateforless.com) for a full demo and to join the duscussion.
 
-##Live Demo
+## Live Demo
 View the animation library in action over at http://animateforless.com/. You can find Dan Eden's original demo at http://daneden.me/animate/.
 
 ## License
 Animate.less is licensed under the MIT license. (http://opensource.org/licenses/MIT)
 
-##Documentation
+## Documentation
 Coming soon. I promise! Below is a cheat sheet to keep you busy.
 
-##Cheat Sheet
+## Cheat Sheet
 
-####Attention Seekers
+#### Attention Seekers
 flash
 bounce
 shake
@@ -115,14 +115,14 @@ pulse
 rotate
 rotateCC
 
-####Flippers
+#### Flippers
 flip
 flipInX
 flipOutX
 flipInY
 flipOutY
 
-####Fading Entrances
+#### Fading Entrances
 fadeIn
 fadeInUp
 fadeInDown
@@ -133,7 +133,7 @@ fadeInDownBig
 fadeInLeftBig
 fadeInRightBig
 
-####Fading Exits
+#### Fading Exits
 fadeOut
 fadeOutUp
 fadeOutDown
@@ -144,50 +144,50 @@ fadeOutDownBig
 fadeOutLeftBig
 fadeOutRightBig
 
-####Bouncing Entrances
+#### Bouncing Entrances
 bounceIn
 bounceInDown
 bounceInUp
 bounceInLeft
 bounceInRight
 
-####Bouncing Exits
+#### Bouncing Exits
 bounceOut
 bounceOutDown
 bounceOutUp
 bounceOutLeft
 bounceOutRight
 
-####Rotating Entrances
+#### Rotating Entrances
 rotateIn
 rotateInDownLeft
 rotateInDownRight
 rotateInUpLeft
 rotateInUpRight
 
-####Rotating Exits
+#### Rotating Exits
 rotateOut
 rotateOutDownLeft
 rotateOutDownRight
 rotateOutUpLeft
 rotateOutUpRight
 
-####Lightspeed
+#### Lightspeed
 lightSpeedIn
 lightSpeedOut
 
-####Specials
+#### Specials
 hinge
 rollIn
 rollOut
 
-###Sliding Entrances
+### Sliding Entrances
 slideInDown
 slideInLeft
 slideInRight
 slideInUp
 
-###Sliding Exits
+### Sliding Exits
 slideOutDown
 slideOutLeft
 slideOutRight
