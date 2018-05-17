@@ -1,0 +1,25 @@
+@import "../../../dist/less/_mixins";
+
+// =============================================================================
+
+.animated {
+
+    &.bounce {
+        #a.animated();
+        #a.bounceOutDown();
+
+        &.infinite {
+            #a.iterate(infinite);
+            }
+        }
+    }
+
+// =============================================================================
+
+#a.keyframes(
+    bounceOutDown; {
+        20%      {             #a._transform(translate3d( 0,  10px,   0 )); }
+        40%, 45% { opacity: 1; #a._transform(translate3d( 0, -20px,   0 )); }
+        to       { opacity: 0; #a._transform(translate3d( 0,  2000px, 0 )); }
+        }
+    );

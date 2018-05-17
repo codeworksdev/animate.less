@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:zoomOut}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes zoomOut{from{opacity:1}50%{opacity:0;transform:scale3d(.3,.3,.3)}to{opacity:0}}

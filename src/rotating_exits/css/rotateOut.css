@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:rotateOut}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes rotateOut{from{opacity:1;transform-origin:center}to{opacity:0;transform-origin:center;transform:rotate3d(0,0,1,200deg)}}

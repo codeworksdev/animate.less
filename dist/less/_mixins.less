@@ -1,0 +1,284 @@
+@import "_options";
+
+/*
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+*/
+
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+// ANIMATION FRAMEWORK
+// xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+#a {
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // INITIALIZER
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .animated (                                       ) { #a.fill(@o_animateless_fill); #a.duration( a; @o_animateless_duration ); #a.delay( a; 0s     ); #a.iterate( 1           );                      }
+    .animated ( @name                                 ) { #a.fill(@o_animateless_fill); #a.duration( a; @o_animateless_duration ); #a.delay( a; 0s     ); #a.iterate( 1           ); #a.animation(@name); }
+    .animated ( @name; @duration                      ) { #a.fill(@o_animateless_fill); #a.duration( a; @duration               ); #a.delay( a; 0s     ); #a.iterate( 1           ); #a.animation(@name); }
+    .animated ( @name; @duration; @delay              ) { #a.fill(@o_animateless_fill); #a.duration( a; @duration               ); #a.delay( a; @delay ); #a.iterate( 1           ); #a.animation(@name); }
+    .animated ( @name; @duration; @delay; @iterations ) { #a.fill(@o_animateless_fill); #a.duration( a; @duration               ); #a.delay( a; @delay ); #a.iterate( @iterations ); #a.animation(@name); }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // VENDOR PREFIX GENERATOR
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .vendor(@property; @value) when (@o_animateless_prefixed = true) {
+        -webkit-@{property}: @value;
+           -moz-@{property}: @value;
+            -ms-@{property}: @value;
+             -o-@{property}: @value;
+                @{property}: @value;
+        }
+
+    .vendor(@property; @value) when (@o_animateless_prefixed = false) {
+        @{property}: @value;
+        }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // KEYFRAMES GENERATOR
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .keyframes(@name; @frames) when (@o_animateless_prefixed = true) {
+        @-webkit-keyframes @name { @vendor: -webkit-; @frames(); }
+           @-moz-keyframes @name { @vendor: -moz-;    @frames(); }
+             @-o-keyframes @name { @vendor: -o-;      @frames(); }
+                @keyframes @name { @vendor: ~'';      @frames(); }
+        }
+
+    .keyframes(@name; @frames) when (@o_animateless_prefixed = false) {
+        @keyframes @name {
+            @vendor: ~'';
+            @frames();
+            }
+        }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // SHORTHAND MIXINS (ALL VENDORS)
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .animation           ( @name                                                           )                  { #a.vendor( animation-name;             @name                            ); }
+    .animations          ( @list                                                           )                  { #a.vendor( animation;                  @list                            ); }
+    .backface-visibility ( @value                                                          )                  { #a.vendor( backface-visibility;        @value                           ); }
+    .delay               ( @what; @time                                                    ) when (@what = a) { #a.vendor( animation-delay;            @time                            ); }
+    .delay               ( @what; @time                                                    ) when (@what = t) { #a.vendor( transition-delay;           @time                            ); }
+    .direction           ( @dir                                                            )                  { #a.vendor( animation-direction;        @dir                             ); }
+    .duration            ( @what; @time                                                    ) when (@what = a) { #a.vendor( animation-duration;         @time                            ); }
+    .duration            ( @what; @time                                                    ) when (@what = t) { #a.vendor( transition-duration;        @time                            ); }
+    .fill                ( @mode                                                           )                  { #a.vendor( animation-fill-mode;        @mode                            ); }
+    .iterate             ( @iterations                                                     )                  { #a.vendor( animation-iteration-count;  @iterations                      ); }
+    .timing              ( @what; @function                                                ) when (@what = a) { #a.vendor( animation-timing-function;  @function                        ); }
+    .timing              ( @what; @function                                                ) when (@what = t) { #a.vendor( transition-timing-function; @function                        ); }
+    .transform           ( @value                                                          )                  { #a.vendor( transform;                  @value                           ); }
+    .transform-origin    ( @position                                                       )                  { #a.vendor( transform-origin;           @position                        ); }
+    .transition          ( @prop: all; @duration: 0.5s; @delay: 0s; @function: ease-in-out )                  { #a.vendor( transition;                 @prop @duration @function @delay ); }
+    .transitions         ( @list                                                           )                  { #a.vendor( transition;                 @list                            ); }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // SHORTHAND MIXINS (VENDOR-SPECIFIC)
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    ._animation           ( @name                                                           )                  { @{vendor}animation-name:             @name;                            }
+    ._animations          ( @list                                                           )                  { @{vendor}animation:                  @list;                            }
+    ._backface-visibility ( @value                                                          )                  { @{vendor}backface-visibility:        @value;                           }
+    ._delay               ( @what; @time                                                    ) when (@what = a) { @{vendor}animation-delay:            @time;                            }
+    ._delay               ( @what; @time                                                    ) when (@what = t) { @{vendor}transition-delay:           @time;                            }
+    ._direction           ( @dir                                                            )                  { @{vendor}animation-direction:        @dir;                             }
+    ._duration            ( @what; @time                                                    ) when (@what = a) { @{vendor}animation-duration:         @time;                            }
+    ._duration            ( @what; @time                                                    ) when (@what = t) { @{vendor}transition-duration:        @time;                            }
+    ._fill                ( @mode                                                           )                  { @{vendor}animation-fill-mode:        @iterations;                      }
+    ._iterate             ( @iterations                                                     )                  { @{vendor}animation-iteration-count:  @iterations;                      }
+    ._timing              ( @what; @function                                                ) when (@what = a) { @{vendor}animation-timing-function:  @function;                        }
+    ._timing              ( @what; @function                                                ) when (@what = t) { @{vendor}transition-timing-function: @function;                        }
+    ._transform           ( @value                                                          )                  { @{vendor}transform:                  @value;                           }
+    ._transform-origin    ( @position                                                       )                  { @{vendor}transform-origin:           @position;                        }
+    ._transition          ( @prop: all; @duration: 0.5s; @delay: 0s; @function: ease-in-out )                  { @{vendor}transition:                 @prop @duration @function @delay; }
+    ._transitions         ( @list                                                           )                  { @{vendor}transition:                 @list;                            }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // PRE-BAKED ANIMATION MIXINS
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .bounce             () { #a.vendor( animation-name; bounce             ); #a.transform-origin(center bottom);                     }
+    .bounceIn           () { #a.vendor( animation-name; bounceIn           ); #a.duration(a, 0.75s);                                  }
+    .bounceInDown       () { #a.vendor( animation-name; bounceInDown       );                                                         }
+    .bounceInLeft       () { #a.vendor( animation-name; bounceInLeft       );                                                         }
+    .bounceInRight      () { #a.vendor( animation-name; bounceInRight      );                                                         }
+    .bounceInUp         () { #a.vendor( animation-name; bounceInUp         );                                                         }
+    .bounceOut          () { #a.vendor( animation-name; bounceOut          ); #a.duration(a, 0.75s);                                  }
+    .bounceOutDown      () { #a.vendor( animation-name; bounceOutDown      );                                                         }
+    .bounceOutLeft      () { #a.vendor( animation-name; bounceOutLeft      );                                                         }
+    .bounceOutRight     () { #a.vendor( animation-name; bounceOutRight     );                                                         }
+    .bounceOutUp        () { #a.vendor( animation-name; bounceOutUp        );                                                         }
+    .fadeIn             () { #a.vendor( animation-name; fadeIn             );                                                         }
+    .fadeInDown         () { #a.vendor( animation-name; fadeInDown         );                                                         }
+    .fadeInDownBig      () { #a.vendor( animation-name; fadeInDownBig      );                                                         }
+    .fadeInLeft         () { #a.vendor( animation-name; fadeInLeft         );                                                         }
+    .fadeInLeftBig      () { #a.vendor( animation-name; fadeInLeftBig      );                                                         }
+    .fadeInRight        () { #a.vendor( animation-name; fadeInRight        );                                                         }
+    .fadeInRightBig     () { #a.vendor( animation-name; fadeInRightBig     );                                                         }
+    .fadeInUp           () { #a.vendor( animation-name; fadeInUp           );                                                         }
+    .fadeInUpBig        () { #a.vendor( animation-name; fadeInUpBig        );                                                         }
+    .fadeOut            () { #a.vendor( animation-name; fadeOut            );                                                         }
+    .fadeOutDown        () { #a.vendor( animation-name; fadeOutDown        );                                                         }
+    .fadeOutDownBig     () { #a.vendor( animation-name; fadeOutDownBig     );                                                         }
+    .fadeOutLeft        () { #a.vendor( animation-name; fadeOutLeft        );                                                         }
+    .fadeOutLeftBig     () { #a.vendor( animation-name; fadeOutLeftBig     );                                                         }
+    .fadeOutRight       () { #a.vendor( animation-name; fadeOutRight       );                                                         }
+    .fadeOutRightBig    () { #a.vendor( animation-name; fadeOutRightBig    );                                                         }
+    .fadeOutUp          () { #a.vendor( animation-name; fadeOutUp          );                                                         }
+    .fadeOutUpBig       () { #a.vendor( animation-name; fadeOutUpBig       );                                                         }
+    .flash              () { #a.vendor( animation-name; flash              );                                                         }
+    .flashmin           () { #a.vendor( animation-name; flashmin           );                                                         }
+    .flip               () { #a.vendor( animation-name; flip               ); #a.backface-visibility(visible);                        }
+    .flipInX            () { #a.vendor( animation-name; flipInX            ); #a.backface-visibility(visible);                        }
+    .flipInY            () { #a.vendor( animation-name; flipInY            ); #a.backface-visibility(visible);                        }
+    .flipOutX           () { #a.vendor( animation-name; flipOutX           ); #a.backface-visibility(visible); #a.duration(a, 0.75s); }
+    .flipOutY           () { #a.vendor( animation-name; flipOutY           ); #a.backface-visibility(visible); #a.duration(a, 0.75s); }
+    .headShake          () { #a.vendor( animation-name; headShake          ); #a.timing(a; ease-in-out);                              }
+    .hinge              () { #a.vendor( animation-name; hinge              ); #a.duration(a, 2s);                                     }
+    .jackInTheBox       () { #a.vendor( animation-name; jackInTheBox       );                                                         }
+    .jello              () { #a.vendor( animation-name; jello              ); #a.transform-origin(center);                            }
+    .lightSpeedIn       () { #a.vendor( animation-name; lightSpeedIn       ); #a.timing(a; ease-out);                                 }
+    .lightSpeedOut      () { #a.vendor( animation-name; lightSpeedOut      ); #a.timing(a; ease-in);                                  }
+    .pulse              () { #a.vendor( animation-name; pulse              );                                                         }
+    .rollIn             () { #a.vendor( animation-name; rollIn             );                                                         }
+    .rollOut            () { #a.vendor( animation-name; rollOut            );                                                         }
+    .rotate             () { #a.vendor( animation-name; rotate             );                                                         }
+    .rotateCC           () { #a.vendor( animation-name; rotateCC           );                                                         }
+    .rotateIn           () { #a.vendor( animation-name; rotateIn           );                                                         }
+    .rotateInDownLeft   () { #a.vendor( animation-name; rotateInDownLeft   );                                                         }
+    .rotateInDownRight  () { #a.vendor( animation-name; rotateInDownRight  );                                                         }
+    .rotateInUpLeft     () { #a.vendor( animation-name; rotateInUpLeft     );                                                         }
+    .rotateInUpRight    () { #a.vendor( animation-name; rotateInUpRight    );                                                         }
+    .rotateOut          () { #a.vendor( animation-name; rotateOut          );                                                         }
+    .rotateOutDownLeft  () { #a.vendor( animation-name; rotateOutDownLeft  );                                                         }
+    .rotateOutDownRight () { #a.vendor( animation-name; rotateOutDownRight );                                                         }
+    .rotateOutUpLeft    () { #a.vendor( animation-name; rotateOutUpLeft    );                                                         }
+    .rotateOutUpRight   () { #a.vendor( animation-name; rotateOutUpRight   );                                                         }
+    .rotateZoomIn       () { #a.vendor( animation-name; rotateZoomIn       );                                                         }
+    .rotateZoomInCC     () { #a.vendor( animation-name; rotateZoomInCC     );                                                         }
+    .rotateZoomOut      () { #a.vendor( animation-name; rotateZoomOut      );                                                         }
+    .rotateZoomOutCC    () { #a.vendor( animation-name; rotateZoomOutCC    );                                                         }
+    .rubberBand         () { #a.vendor( animation-name; rubberBand         );                                                         }
+    .shake              () { #a.vendor( animation-name; shake              );                                                         }
+    .slideInDown        () { #a.vendor( animation-name; slideInDown        );                                                         }
+    .slideInLeft        () { #a.vendor( animation-name; slideInLeft        );                                                         }
+    .slideInRight       () { #a.vendor( animation-name; slideInRight       );                                                         }
+    .slideInUp          () { #a.vendor( animation-name; slideInUp          );                                                         }
+    .slideOutDown       () { #a.vendor( animation-name; slideOutDown       );                                                         }
+    .slideOutLeft       () { #a.vendor( animation-name; slideOutLeft       );                                                         }
+    .slideOutRight      () { #a.vendor( animation-name; slideOutRight      );                                                         }
+    .slideOutUp         () { #a.vendor( animation-name; slideOutUp         );                                                         }
+    .swing              () { #a.vendor( animation-name; swing              ); #a.transform-origin(top center);                        }
+    .tada               () { #a.vendor( animation-name; tada               );                                                         }
+    .wobble             () { #a.vendor( animation-name; wobble             );                                                         }
+    .zoomIn             () { #a.vendor( animation-name; zoomIn             );                                                         }
+    .zoomInDown         () { #a.vendor( animation-name; zoomInDown         );                                                         }
+    .zoomInLeft         () { #a.vendor( animation-name; zoomInLeft         );                                                         }
+    .zoomInRight        () { #a.vendor( animation-name; zoomInRight        );                                                         }
+    .zoomInUp           () { #a.vendor( animation-name; zoomInUp           );                                                         }
+    .zoomOut            () { #a.vendor( animation-name; zoomOut            );                                                         }
+    .zoomOutDown        () { #a.vendor( animation-name; zoomOutDown        );                                                         }
+    .zoomOutLeft        () { #a.vendor( animation-name; zoomOutLeft        );                                                         }
+    .zoomOutRight       () { #a.vendor( animation-name; zoomOutRight       );                                                         }
+    .zoomOutUp          () { #a.vendor( animation-name; zoomOutUp          );                                                         }
+
+
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    // ANIMATION GUARDS (FOR PRE-BAKED ANIMATION MIXINS)
+    // xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+    .animation(@name) when ( @name = bounce             ) { #a.bounce();             }
+    .animation(@name) when ( @name = bounceIn           ) { #a.bounceIn();           }
+    .animation(@name) when ( @name = bounceInDown       ) { #a.bounceInDown();       }
+    .animation(@name) when ( @name = bounceInLeft       ) { #a.bounceInLeft();       }
+    .animation(@name) when ( @name = bounceInRight      ) { #a.bounceInRight();      }
+    .animation(@name) when ( @name = bounceInUp         ) { #a.bounceInUp();         }
+    .animation(@name) when ( @name = bounceOut          ) { #a.bounceOut();          }
+    .animation(@name) when ( @name = bounceOutDown      ) { #a.bounceOutDown();      }
+    .animation(@name) when ( @name = bounceOutLeft      ) { #a.bounceOutLeft();      }
+    .animation(@name) when ( @name = bounceOutRight     ) { #a.bounceOutRight();     }
+    .animation(@name) when ( @name = bounceOutUp        ) { #a.bounceOutUp();        }
+    .animation(@name) when ( @name = fadeIn             ) { #a.fadeIn();             }
+    .animation(@name) when ( @name = fadeInDown         ) { #a.fadeInDown();         }
+    .animation(@name) when ( @name = fadeInDownBig      ) { #a.fadeInDownBig();      }
+    .animation(@name) when ( @name = fadeInLeft         ) { #a.fadeInLeft();         }
+    .animation(@name) when ( @name = fadeInLeftBig      ) { #a.fadeInLeftBig();      }
+    .animation(@name) when ( @name = fadeInRight        ) { #a.fadeInRight();        }
+    .animation(@name) when ( @name = fadeInRightBig     ) { #a.fadeInRightBig();     }
+    .animation(@name) when ( @name = fadeInUp           ) { #a.fadeInUp();           }
+    .animation(@name) when ( @name = fadeInUpBig        ) { #a.fadeInUpBig();        }
+    .animation(@name) when ( @name = fadeOut            ) { #a.fadeOut();            }
+    .animation(@name) when ( @name = fadeOutDown        ) { #a.fadeOutDown();        }
+    .animation(@name) when ( @name = fadeOutDownBig     ) { #a.fadeOutDownBig();     }
+    .animation(@name) when ( @name = fadeOutLeft        ) { #a.fadeOutLeft();        }
+    .animation(@name) when ( @name = fadeOutLeftBig     ) { #a.fadeOutLeftBig();     }
+    .animation(@name) when ( @name = fadeOutRight       ) { #a.fadeOutRight();       }
+    .animation(@name) when ( @name = fadeOutRightBig    ) { #a.fadeOutRightBig();    }
+    .animation(@name) when ( @name = fadeOutUp          ) { #a.fadeOutUp();          }
+    .animation(@name) when ( @name = fadeOutUpBig       ) { #a.fadeOutUpBig();       }
+    .animation(@name) when ( @name = flash              ) { #a.flash();              }
+    .animation(@name) when ( @name = flashmin           ) { #a.flashmin();           }
+    .animation(@name) when ( @name = flip               ) { #a.flip();               }
+    .animation(@name) when ( @name = flipInX            ) { #a.flipInX();            }
+    .animation(@name) when ( @name = flipInY            ) { #a.flipInY();            }
+    .animation(@name) when ( @name = flipOutX           ) { #a.flipOutX();           }
+    .animation(@name) when ( @name = flipOutY           ) { #a.flipOutY();           }
+    .animation(@name) when ( @name = headShake          ) { #a.headShake();          }
+    .animation(@name) when ( @name = hinge              ) { #a.hinge();              }
+    .animation(@name) when ( @name = jackInTheBox       ) { #a.jackInTheBox();       }
+    .animation(@name) when ( @name = jello              ) { #a.jello();              }
+    .animation(@name) when ( @name = lightSpeedIn       ) { #a.lightSpeedIn();       }
+    .animation(@name) when ( @name = lightSpeedOut      ) { #a.lightSpeedOut();      }
+    .animation(@name) when ( @name = pulse              ) { #a.pulse();              }
+    .animation(@name) when ( @name = rollIn             ) { #a.rollIn();             }
+    .animation(@name) when ( @name = rollOut            ) { #a.rollOut();            }
+    .animation(@name) when ( @name = rotate             ) { #a.rotate();             }
+    .animation(@name) when ( @name = rotateCC           ) { #a.rotateCC();           }
+    .animation(@name) when ( @name = rotateIn           ) { #a.rotateIn();           }
+    .animation(@name) when ( @name = rotateInDownLeft   ) { #a.rotateInDownLeft();   }
+    .animation(@name) when ( @name = rotateInDownRight  ) { #a.rotateInDownRight();  }
+    .animation(@name) when ( @name = rotateInUpLeft     ) { #a.rotateInUpLeft();     }
+    .animation(@name) when ( @name = rotateInUpRight    ) { #a.rotateInUpRight();    }
+    .animation(@name) when ( @name = rotateOut          ) { #a.rotateOut();          }
+    .animation(@name) when ( @name = rotateOutDownLeft  ) { #a.rotateOutDownLeft();  }
+    .animation(@name) when ( @name = rotateOutDownRight ) { #a.rotateOutDownRight(); }
+    .animation(@name) when ( @name = rotateOutUpLeft    ) { #a.rotateOutUpLeft();    }
+    .animation(@name) when ( @name = rotateOutUpRight   ) { #a.rotateOutUpRight();   }
+    .animation(@name) when ( @name = rotateZoomIn       ) { #a.rotateZoomIn();       }
+    .animation(@name) when ( @name = rotateZoomInCC     ) { #a.rotateZoomInCC();     }
+    .animation(@name) when ( @name = rotateZoomOut      ) { #a.rotateZoomOut();      }
+    .animation(@name) when ( @name = rotateZoomOutCC    ) { #a.rotateZoomOutCC();    }
+    .animation(@name) when ( @name = rubberBand         ) { #a.rubberBand();         }
+    .animation(@name) when ( @name = shake              ) { #a.shake();              }
+    .animation(@name) when ( @name = slideInDown        ) { #a.slideInDown();        }
+    .animation(@name) when ( @name = slideInLeft        ) { #a.slideInLeft();        }
+    .animation(@name) when ( @name = slideInRight       ) { #a.slideInRight();       }
+    .animation(@name) when ( @name = slideInUp          ) { #a.slideInUp();          }
+    .animation(@name) when ( @name = slideOutDown       ) { #a.slideOutDown();       }
+    .animation(@name) when ( @name = slideOutLeft       ) { #a.slideOutLeft();       }
+    .animation(@name) when ( @name = slideOutRight      ) { #a.slideOutRight();      }
+    .animation(@name) when ( @name = slideOutUp         ) { #a.slideOutUp();         }
+    .animation(@name) when ( @name = swing              ) { #a.swing();              }
+    .animation(@name) when ( @name = tada               ) { #a.tada();               }
+    .animation(@name) when ( @name = wobble             ) { #a.wobble();             }
+    .animation(@name) when ( @name = zoomIn             ) { #a.zoomIn();             }
+    .animation(@name) when ( @name = zoomInDown         ) { #a.zoomInDown();         }
+    .animation(@name) when ( @name = zoomInLeft         ) { #a.zoomInLeft();         }
+    .animation(@name) when ( @name = zoomInRight        ) { #a.zoomInRight();        }
+    .animation(@name) when ( @name = zoomInUp           ) { #a.zoomInUp();           }
+    .animation(@name) when ( @name = zoomOut            ) { #a.zoomOut();            }
+    .animation(@name) when ( @name = zoomOutDown        ) { #a.zoomOutDown();        }
+    .animation(@name) when ( @name = zoomOutLeft        ) { #a.zoomOutLeft();        }
+    .animation(@name) when ( @name = zoomOutRight       ) { #a.zoomOutRight();       }
+    .animation(@name) when ( @name = zoomOutUp          ) { #a.zoomOutUp();          }
+    }

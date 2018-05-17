@@ -1,26 +1,3 @@
-####v1.0.4 (2016-02-02)
+Animate.less uses [GitHub's Releases feature](https://github.com/blog/1547-release-your-software) for its changelogs.
 
-- Added "rotate" animation. Check docs on how to create smooth rotating animatios.
-- Formatting improvements to all source files.
-
-####v1.0.3 (2015-11-26)
-
-- Added "flashmin" animation.
-- Added minified CSS file.
-- Added "animate-nc.less" (no compile) file in case you only need the functions.
-- Some minor formatting improvements.
-- Reorganized directory structure.
-
-####v1.0.2 (2015-09-28)
-
-- #afl wrapper renamed to #a to help reduce file size.
-- Formatting improvments to animate.less file.
-
-####v1.0.1 (2015-02-09)
-
-- #animator wrapper renamed to #afl.
-- Minor syntax improvements.
-
-####v1.0.0 (2014-11-24)
-
-- Initial release.
+See [the Releases section of our GitHub project](https://github.com/codeworksdev/animate.less/releases) for changelogs for each release version of Animate.less.

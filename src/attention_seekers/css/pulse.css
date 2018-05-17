@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:pulse}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes pulse{from{transform:scale3d(1,1,1)}50%{transform:scale3d(1.05,1.05,1.05)}to{transform:scale3d(1,1,1)}}

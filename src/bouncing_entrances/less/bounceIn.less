@@ -1,0 +1,29 @@
+@import "../../../dist/less/_mixins";
+
+// =============================================================================
+
+.animated {
+
+    &.bounce {
+        #a.animated();
+        #a.bounceIn();
+
+        &.infinite {
+            #a.iterate(infinite);
+            }
+        }
+    }
+
+// =============================================================================
+
+#a.keyframes(
+    bounceIn; {
+        from, 20%, 40%, 60%, 80%, to {             #a._timing(a; cubic-bezier(0.215, 0.61, 0.355, 1)); }
+        from                         { opacity: 0; #a._transform(scale3d( 0.3,  0.3,  0.3  ));         }
+        20%                          {             #a._transform(scale3d( 1.1,  1.1,  1.1  ));         }
+        40%                          {             #a._transform(scale3d( 0.9,  0.9,  0.9  ));         }
+        60%                          { opacity: 1; #a._transform(scale3d( 1.03, 1.03, 1.03 ));         }
+        80%                          {             #a._transform(scale3d( 0.97, 0.97, 0.97 ));         }
+        to                           { opacity: 1; #a._transform(scale3d( 1,    1,    1    ));         }
+        }
+    );

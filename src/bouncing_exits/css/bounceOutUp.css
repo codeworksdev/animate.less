@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:bounceOutUp}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes bounceOutUp{20%{transform:translate3d(0,-10px,0)}40%,45%{opacity:1;transform:translate3d(0,20px,0)}to{opacity:0;transform:translate3d(0,-2000px,0)}}

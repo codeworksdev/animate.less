@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:slideOutUp}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes slideOutUp{from{transform:translate3d(0,0,0)}to{transform:translate3d(0,-100%,0);visibility:hidden}}

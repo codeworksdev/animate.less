@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:rotate}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes rotate{from{transform-origin:center;transform:rotate(-360deg)}to{transform-origin:center;transform:rotate(0)}}

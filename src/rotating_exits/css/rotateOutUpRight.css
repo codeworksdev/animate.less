@@ -1,0 +1,1 @@
+.animated.bounce{animation-fill-mode:both;animation-duration:1s;animation-delay:0s;animation-iteration-count:1;animation-name:rotateOutUpRight}.animated.bounce.infinite{animation-iteration-count:infinite}@keyframes rotateOutUpRight{from{opacity:1;transform-origin:right bottom}to{opacity:0;transform-origin:right bottom;transform:rotate3d(0,0,1,90deg)}}

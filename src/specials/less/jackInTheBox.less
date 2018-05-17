@@ -1,0 +1,26 @@
+@import "../../../dist/less/_mixins";
+
+// =============================================================================
+
+.animated {
+
+    &.bounce {
+        #a.animated();
+        #a.jackInTheBox();
+
+        &.infinite {
+            #a.iterate(infinite);
+            }
+        }
+    }
+
+// =============================================================================
+
+#a.keyframes(
+    jackInTheBox; {
+        from { opacity: 0; #a._transform( scale(0.1) rotate(30deg) ); #a._transform-origin(center bottom); }
+        50%  {             #a._transform( rotate(-10deg)           );                                      }
+        70%  {             #a._transform( rotate(3deg)             );                                      }
+        to   { opacity: 1; #a._transform( scale(1)                 );                                      }
+        }
+    );

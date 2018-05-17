@@ -1,0 +1,27 @@
+@import "../../../dist/less/_mixins";
+
+// =============================================================================
+
+.animated {
+
+    &.bounce {
+        #a.animated();
+        #a.flip();
+
+        &.infinite {
+            #a.iterate(infinite);
+            }
+        }
+    }
+
+// =============================================================================
+
+#a.keyframes(
+    flip; {
+        from { #a._transform( perspective(400px) rotate3d(0, 1, 0, -360deg)                          ); #a._timing( a; ease-out ); }
+        40%  { #a._transform( perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg) ); #a._timing( a; ease-out ); }
+        50%  { #a._transform( perspective(400px) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg) ); #a._timing( a; ease-in  ); }
+        80%  { #a._transform( perspective(400px) scale3d(0.95, 0.95, 0.95)                           ); #a._timing( a; ease-in  ); }
+        to   { #a._transform( perspective(400px)                                                     ); #a._timing( a; ease-in  ); }
+        }
+    );

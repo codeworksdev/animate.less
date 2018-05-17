@@ -1,0 +1,29 @@
+@import "../../../dist/less/_mixins";
+
+// =============================================================================
+
+.animated {
+
+    &.bounce {
+        #a.animated();
+        #a.wobble();
+
+        &.infinite {
+            #a.iterate(infinite);
+            }
+        }
+    }
+
+// =============================================================================
+
+#a.keyframes(
+    wobble; {
+        from { #a._transform( translate3d(  0,   0, 0)                           ); }
+        15%  { #a._transform( translate3d( -25%, 0, 0) rotate3d(0, 0, 1, -5deg ) ); }
+        30%  { #a._transform( translate3d(  20%, 0, 0) rotate3d(0, 0, 1,  3deg ) ); }
+        45%  { #a._transform( translate3d( -15%, 0, 0) rotate3d(0, 0, 1, -3deg ) ); }
+        60%  { #a._transform( translate3d(  10%, 0, 0) rotate3d(0, 0, 1,  2deg ) ); }
+        75%  { #a._transform( translate3d( -5%,  0, 0) rotate3d(0, 0, 1, -1deg ) ); }
+        to   { #a._transform( translate3d(  0,   0, 0)                           ); }
+        }
+    );
