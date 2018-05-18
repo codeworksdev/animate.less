@@ -112,7 +112,7 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 
 > ## #a.keyframes
 >
-> **#a.keyframes(** _property_ **keyframe_name**, _block_ **frames** **)**
+> **#a.keyframes(** _property_ **animation_name**, _block_ **frames** **)**
 >
 > Generates a new **`@keyframes`**  CSS  [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), which controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions). If [`@o_animateless_prefixed`](#global-variables) is `true`, generates vendor-prefixed keyframes for maximum cross-browser compatibility.
 >
