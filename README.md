@@ -104,34 +104,6 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 >
 > Defines the [`animation`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) CSS property for an element, while automatically setting [`animation-fill-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode) according to the [`@o_animateless_fill`](#global-variables) variable.
 
-> ## #a.vendor
->
-> **#a.vendor(** _property_ **name**, _mixed_ **value** **)**
->
-> Generates cross-browser CSS properties according to the [current configuration](#global-variables).
-
-> ## #a.keyframes
->
-> **#a.keyframes(** _property_ **animation_name**, _block_ **frames** **)**
->
-> Generates a new **`@keyframes`**  CSS  [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), which controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions). If [`@o_animateless_prefixed`](#global-variables) is `true`, generates vendor-prefixed keyframes for maximum cross-browser compatibility.
->
-> **EXAMPLE**
-> ```less
->#a.keyframes(
->    fadeIn; {
->        from { opacity: 0; }
->        to   { opacity: 1; }
->        }
->    );
-> ```
-
-> ## #a.animation
->
-> **#a.animation(** _property_ **animation_name** **)**
->
-> Specifies one or more animations names that should be applied to an element. Each name indicates an [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) at-rule that defines the property values for the animation sequence.
-
 > ## #a.animations
 >
 > **#a.animations(** _list_ **animations;** **)**
@@ -176,6 +148,22 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 >
 > Defines the [`animation-iteration-count`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count) CSS property specifies the number of times an animation cycle should be played before stopping. If multiple values are specified (i.e., comma-separated list), each time the animation is played the next value in the list is used, cycling back to the first value after the last one is used.
 
+> ## #a.keyframes
+>
+> **#a.keyframes(** _property_ **animation_name**, _block_ **frames** **)**
+>
+> Generates a new **`@keyframes`**  CSS  [at-rule](https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule), which controls the intermediate steps in a CSS animation sequence by defining styles for keyframes (or waypoints) along the animation sequence. This gives more control over the intermediate steps of the animation sequence than [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions). If [`@o_animateless_prefixed`](#global-variables) is `true`, generates vendor-prefixed keyframes for maximum cross-browser compatibility.
+>
+> **EXAMPLE**
+> ```less
+>#a.keyframes(
+>    fadeIn; {
+>        from { opacity: 0; }
+>        to   { opacity: 1; }
+>        }
+>    );
+> ```
+
 > ## #a.timing
 >
 > **#a.timing(** _a|t_ **type**, _string|function_ **timing_function** **)**
@@ -207,6 +195,18 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 > Defines one or more [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) CSS properties for an element. This is especially useful when you need to chain multiple transitions together in a sequence. Check out some examples [here](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions#Examples).
 >
 > _**Note:**  Always remember to terminate your comma-separated CSS list with a semicolon to tell the compiler a list is being passed as a single argument ([reference](http://lesscss.org/features/#mixins-feature-mixins-with-multiple-parameters))._
+
+> ## #a.vendor
+>
+> **#a.vendor(** _property_ **name**, _mixed_ **value** **)**
+>
+> Generates cross-browser CSS properties according to the [current configuration](#global-variables).
+
+> ## #a.animation
+>
+> **#a.animation(** _property_ **animation_name** **)**
+>
+> Specifies one or more animations names that should be applied to an element. Each name indicates an [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) at-rule that defines the property values for the animation sequence.
 
 ## Underscored Shorthand Mixins
 Alternatively, you can use the "underscored" variants of the shorthand mixins listed above if you need to generate CSS properties for a specific vendor prefix only (defined by the `@vendor` variable). More information [here](https://github.com/codeworksdev/animate.less/issues/46#underscored-shorthand-mixins).
