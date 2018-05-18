@@ -6,7 +6,7 @@ _CSS animations framework for Less.js CSS compilers._
 Originally sourced from the insanely cool [Animate.css](https://github.com/daneden/animate.css) project, Animate.less takes constructing CSS animations a step further by tapping into the power of the popular [Less.js CSS preprocessor](http://lesscss.org/) to create seriously complex animations. You don't even have to use any JavaScript or jQuery magic to get the job done. It's CSS, with just a little more.
 
 ## What is Less.js?
-Less.js is a CSS preprocessor that extends the CSS language, adding features that introduce variables, mixins, functions, and many other techniques commonly found in popular scripting languages. This allows you to make CSS that is more maintainable, themable and extendable.
+[Less.js](http://lesscss.org/) is a CSS preprocessor that extends the CSS language, adding features that introduce variables, mixins, functions, and many other techniques commonly found in popular scripting languages. This allows you to make CSS that is more maintainable, themable and extendable.
 
 Less.js runs inside [Node](https://nodejs.org/), in the browser and inside [Rhino](https://mozilla.github.io/rhino/). There are also many  [3rd-party tools](http://lesscss.org/usage/index.html#guis-for-less)  available that allow you to compile your files and watch for changes. The latter is the way to go if you want to get up and running quickly.
 
@@ -44,11 +44,11 @@ For example, the jQuery example above can be written as a script-less CSS block:
 
 ```less
 #yourElement {
-    #a.animated();         // initialize the element with default animation properties
+    #a.animated();         // apply default animation properties
     #a.iterate(infinite);  // repeat all animations forever
     #a.delay(a, 2s);       // delay all animations for exacty 2 seconds
     #a.duration(a, 3s);    // each iteration will play for 3 seconds
-    #a.flash();            // apply a single animation (i.e., @keyframe flash)
+    #a.flash();            // apply a single animation
     }
 ```
 or with the shorthand variant:
@@ -100,11 +100,7 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 
 > ## #a.animated
 >
-> **#a.animated()**
-> **#a.animated(** _property_ **keyframe_name** **)**
-> **#a.animated(** _property_ **keyframe_name**, _time_ **duration** **)**
-> **#a.animated(** _property_ **keyframe_name**, _time_ **duration**, _time_ **delay** **)**
-> **#a.animated(** _property_ **keyframe_name**, _time_ **duration**, _time_ **delay**, _number|infinite_ **iterations** **)**
+> **#a.animated(** [_property_ **animation_name**][, _time_ **duration**][, _time_ **delay**][, _number|infinite_ **iterations**] **)**
 >
 > Defines the [`animation`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) CSS property for an element, while automatically setting [`animation-fill-mode`](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-fill-mode) according to the [`@o_animateless_fill`](#global-variables) variable.
 
@@ -132,10 +128,9 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 
 > ## #a.animation
 >
-> **#a.animation(** _property_ **keyframe_name** **)**
-> **#a.animation(** _list_ **keyframe_names;** **)**
+> **#a.animation(** _property_ **animation_name** **)**
 >
-> Specifies one or more animations names that should be applied to an element. Each name indicates an [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) at-rule that defines the property values for the animation sequence. If passing a comma-separated CSS list, remember to terminate it with a semicolon to tell the compiler a list is being passed as a single argument ([reference](http://lesscss.org/features/#mixins-feature-mixins-with-multiple-parameters)).
+> Specifies one or more animations names that should be applied to an element. Each name indicates an [`@keyframes`](https://developer.mozilla.org/en-US/docs/Web/CSS/@keyframes) at-rule that defines the property values for the animation sequence.
 
 > ## #a.animations
 >
@@ -201,7 +196,7 @@ _**Note:** The [cheat sheet](#cheat-sheet) at the bottom of this page contains a
 
 > ## #a.transition
 >
-> **#a.transition(** [_property_ **name**] [, _unit_ **duration**] [, _unit_ **delay**] [, _string|function_ **timing_function**] **)**
+> **#a.transition(** [_property_ **name**][, _unit_ **duration**][, _unit_ **delay**][, _string|function_ **timing_function**] **)**
 >
 > Defines a single [`transition`](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) CSS property, which is a shorthand property for the variable transition properties: _transition-property, transition-duration, transition-timing-function, transition-delay_.
 
