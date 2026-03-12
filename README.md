@@ -46,7 +46,7 @@ For example, the jQuery example above can be written as a script-less CSS block:
 #yourElement {
     #a.animated();         // apply default animation properties
     #a.iterate(infinite);  // repeat all animations forever
-    #a.delay(a, 2s);       // delay all animations for exacty 2 seconds
+    #a.delay(a, 2s);       // delay all animations for exactly 2 seconds
     #a.duration(a, 3s);    // each iteration will play for 3 seconds
     #a.flash();            // apply a single animation
     }
